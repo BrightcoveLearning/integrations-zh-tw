@@ -1,0 +1,776 @@
+﻿<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="本文件提供使用 Adobe Magento 商務的 Brightcove 延伸模組的逐步指示。">
+  
+  <title>Adobe 商務擴充功能使用者指南</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="產品標誌" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">選擇語言</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+    <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+      <option value="">其他布萊特灣文件</option>
+      
+        
+          <option value="https://support.brightcove.com">文件首頁</option>
+        
+      
+        
+          <option value="https://audience.support.brightcove.com">布萊特灣觀眾</option>
+        
+      
+        
+          <option value="https://beacon.support.brightcove.com">布萊特灣燈塔</option>
+        
+      
+        
+          <option value="https://campaign.support.brightcove.com">布萊特灣戰役</option>
+        
+      
+        
+          <option value="https://engage.support.brightcove.com">布萊特灣參與</option>
+        
+      
+        
+          <option value="https://live.support.brightcove.com">Brightcove Live</option>
+        
+      
+        
+          <option value="https://gallery.support.brightcove.com">Brightcove 圖庫</option>
+        
+      
+        
+          <option value="https://ssai.support.brightcove.com">布萊特灣</option>
+        
+      
+        
+          <option value="https://social.support.brightcove.com">布萊特灣社會</option>
+        
+      
+        
+          <option value="https://studio.support.brightcove.com">視訊雲端工作室</option>
+        
+      
+        
+          <option value="https://player.support.brightcove.com">布萊特灣球員開發</option>
+        
+      
+        
+          <option value="https://apis.support.brightcove.com">視訊雲端平台 API</option>
+        
+      
+        
+          <option value="https://sdks.support.brightcove.com">視訊雲端裝置開發套件</option>
+        
+      
+        
+          <option value="https://integrations.support.brightcove.com">整合與 CMS 連接器</option>
+        
+      
+        
+          <option value="https://general.support.brightcove.com">視訊雲端一般資訊</option>
+        
+      
+        
+          <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+        
+      
+    </select>
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="支持"/>聯繫支持</a><span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span><a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="系統狀態"/>系統狀況</a></span><br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">首頁</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/ecommerce/adobe-magento-commerce/">Adobe 瑪琴托商務</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Adobe 商務擴充功能使用者指南</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">首頁</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">一般資訊<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/general/cms-integration-training-videos.html">CMS 整合訓練影片</a></li>
+                  
+                
+                  
+                    <li><a href="/general/integrating-your-cms-video-cloud.html">將CMS與Video Cloud集成</a></li>
+                  
+                
+                  
+                    <li><a href="/general/embedding-brightcove-players-cms.html">在 CMS 中嵌入布萊特灣玩家</a></li>
+                  
+                
+                  
+                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">在 CMS 中嵌入頁面內體驗</a></li>
+                  
+                
+                  
+                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">偵錯網路和 API 連線問題</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/wordpress/index.html">WordPress <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">開始使用布萊特灣視頻連接</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">組態</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">常見問題</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">安裝</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">使用連接器</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/drupal/index.html">德魯帕爾<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">開始使用 Drupal 的連接器</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">德魯帕爾 8-配置</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">德魯帕爾 8-內容管理</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">德魯帕爾 8-嵌入內容</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal 8-連接器安裝</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal 7-配置和使用</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">德魯帕爾 7-安裝</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/adobe/index.html">Adobe <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">開始使用 AEM 的連接器</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">組態</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">安裝</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概述</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">使用連接器</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/sitecore/index.html">網站核心<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">開始使用 Sitecore 的連接器</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/sharepoint/index.html">SharePoint <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">開始使用 SharePoint 的連接器</a></li>
+                  
+                
+                  
+                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">使用連接器</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ecommerce/index.html">電子商務<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecommerce/salesforce/index.html">銷售團隊商務雲端<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">銷售團隊商務雲端：安裝</a></li>
+                        
+                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">銷售團隊商務雲端：使用者指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecommerce/adobe-magento-commerce/index.html">Adobe 瑪琴托商務<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">安裝指南</a></li>
+                        
+                        <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">使用者指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ecdn/index.html">電子 DN <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/kollective/index.html">高理性<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/kollective/kollective-deployment-guide.html">多元化的 eCDN 部署指南</a></li>
+                        
+                        <li><a href="/ecdn/kollective/kollective-user-guide.html">多元化的 eDN 使用者指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/peer5/index.html">同儕 5 <strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">具備 Peer5 整合的布萊特灣</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/ramp/index.html">坡道<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">開始使用斜坡 OmnicCache 和視訊雲端</a></li>
+                        
+                        <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">開始使用斜坡多重 + 和視訊雲端</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/web-conferencing/index.html">網路會議<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">布萊特灣現場變焦會議</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">思科 Webex 會議-布萊特灣直播</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">阿瓦雅會議在布萊特灣直播</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-inxpo-live.html">在布萊特灣直播的 INXPO 活動</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">支援<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/support/brightcove-answer.html">布萊特灣答案</a></li>
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">檢視布萊特灣系統狀態頁面</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">聯絡銷售人員</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">開啟支援案例</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="導覽功能表"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">頁面內容</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="在新分頁中開啟" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<h1>Adobe 商務擴充功能使用者指南</h1>
+<article class="bcls-article">
+  <summary>本文件提供使用 Adobe Magento 商務的 Brightcove 延伸模組的逐步指示。</summary>
+  <section class="bcls-section">
+    <h2 id="getting_started"></h2>
+    <ol class="bcls-tasklist">
+        <li>
+          登錄到馬亨托商業：
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/adobe-magento-commerce/magento-login.png" alt="登入"/>
+            <figcaption class="bcls-caption--image">登入</figcaption>
+          </figure>
+        </li>
+        <li>
+          請注意左側導航中的 Brightcove 模塊鏈接：
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/adobe-magento-commerce/magento-navigation.png" alt="瑪亨托導航"/>
+            <figcaption class="bcls-caption--image">瑪亨托導航</figcaption>
+          </figure>
+        </li>
+        <li>
+          按一下「布萊特灣」圖示以顯示「布萊特灣模組」選單：
+          <figure class="bcls-figure">
+            <img class="bcls-image" id="brightcove_module_menu" src="/assets/images/adobe-magento-commerce/brightcove-module-menu.png" alt="亮灣模組功能表"/>
+            <figcaption class="bcls-caption--image">亮灣模組功能表</figcaption>
+          </figure>
+        </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="uploading_videos">上傳視訊</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        來自<a href="#brightcove_module_menu">Brightcove模塊菜單</a>， 打開<strong>新增影片</strong>頁。
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/adobe-magento-commerce/add-video-page.png" alt="新增視訊頁面"/>
+          <figcaption class="bcls-caption--image">新增視訊頁面</figcaption>
+        </figure>
+      </li>
+      <li>選擇要新增影片的「商店檢視」。</li>
+      <li>新增視訊標題 (必要)。</li>
+      <li>瀏覽以尋找本機視訊檔案 (必要)。</li>
+      <li>瀏覽以尋找本機縮圖影像檔案 (必要)。</li>
+      <li>瀏覽以尋找本機海報影像檔案 (選擇性)。</li>
+      <li>為視訊輸入逗號分隔的標籤 (選擇性)。</li>
+      <li>輸入視訊的說明 (選擇性)。</li>
+      <li>按一下「<strong>儲存</strong>」。</li>
+    </ol>
+    <p>注意：「商店檢視」會以標籤形式儲存在影片中繼資料中。此標籤將用於在 [指派] 頁面中實作本地化。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="assign_videos_to_categories_and_products">將影片指派給類別和產品</h2>
+    <p>視訊可以指派給類別和產品。在本節中，我們將探討如何將視頻分配給類別，以及如何在下一節中將它們分配給產品。</p>
+    <h3>指定給類別</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        來自<a href="#brightcove_module_menu">Brightcove模塊菜單</a>， 打開<strong>將視頻分配給類別</strong>頁。
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/adobe-magento-commerce/category-list-with-assigned-videos.png" alt="將視訊指派給類別頁面"/>
+          <figcaption class="bcls-caption--image">將視訊指派給類別頁面</figcaption>
+        </figure>
+      </li>
+      <li>
+        初始頁面顯示類別列表，顯示當前分配給它們的視頻，並提供指向的鏈接<strong>取消分配</strong>要么<strong>更改</strong>現有的視頻分配以及<strong>分配</strong>視頻分類。
+        <p>另請注意：</p>
+        <ul>
+          <li>範圍選擇器，允許您實現本地化過濾器</li>
+          <li>當您將滑鼠游標停留在視訊 ID 上時，會出現影片的縮圖影像</li>
+        </ul>
+      </li>
+      <li>
+        請點擊<strong>分配</strong>在要分配的類別旁邊打開要分配的視頻網格：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/adobe-magento-commerce/video-grid-for-category-assignment.png" alt="類別指派的視訊格線"/>
+          <figcaption class="bcls-caption--image">類別指派的視訊格線</figcaption>
+        </figure>
+      </li>
+      <li>如果您沒看到您要尋找的影片，可以依影片標題進行搜尋。</li>
+      <li>使用本地化下拉式選單來取得您想要的語言。</li>
+      <li>
+        在「視<strong>訊</strong>」欄中：
+        <ul>
+          <li>選擇所選影片的播放器</li>
+          <li>使用選擇器選擇視訊插槽</li>
+        </ul>
+        <aside class="bcls-aside bcls-aside--information language-editable">請注意，插槽值的數量是從組態值產生的。</aside>
+        。</li>
+        <li>如果視頻已分配到該類別，它將顯示橙色邊框和一個<strong>取消分配</strong>選項。</li>
+      </ol>
+      <h3>指派給產品</h3>
+      <ol class="bcls-tasklist-restart">
+        <li>
+          來自<a href="#brightcove_module_menu">Brightcove模塊菜單</a>， 打開<strong>將視頻分配給產品</strong>頁。
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/adobe-magento-commerce/product-list-with-assigned-videos.png" alt="將影片指派給產品頁面"/>
+            <figcaption class="bcls-caption--image">將影片指派給產品頁面</figcaption>
+          </figure>
+        </li>
+        <li>與類別一樣，您可以<strong>分配</strong>影片，或<strong>取消分配</strong>要么<strong>更改</strong>已經分配的視頻。您也可以將滑鼠游標停留在視訊 ID 上，以顯示縮圖。</li>
+        <li>
+          點擊<strong>分配</strong>分配視頻的鏈接。這將顯示視頻網格：
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/adobe-magento-commerce/video-grid-for-product-assignment.png" alt="產品指派的視訊格線"/>
+            <figcaption class="bcls-caption--image">產品指派的視訊格線</figcaption>
+          </figure>
+        </li>
+        <li>如果您沒看到您要尋找的影片，可以依影片標題進行搜尋。</li>
+        <li>使用本地化下拉式選單來取得您想要的語言。</li>
+        <li>
+          在「視<strong>訊</strong>」欄中：
+          <ul>
+            <li>選擇所選影片的播放器</li>
+            <li>使用選擇器選擇視訊插槽</li>
+          </ul>
+          <aside class="bcls-aside bcls-aside--information language-editable">請注意，插槽值的數量是從組態值產生的。</aside>
+          。</li>
+          <li>如果視頻已分配給該產品，它將顯示橙色邊框和一個<strong>取消分配</strong>選項。</li>
+      </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="generate_embed_code">產生內嵌程式碼</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        來自<a href="#brightcove_module_menu">Brightcove模塊菜單</a>，請轉到“生成嵌入代碼”頁面：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/adobe-magento-commerce/generate-embed-code-page.png" alt="產生內嵌字碼頁"/>
+          <figcaption class="bcls-caption--image">產生內嵌字碼頁</figcaption>
+        </figure>
+      </li>
+      <li>選擇要使用的播放器和視頻，然後單擊<strong>取得驗證碼</strong>來查看和復製播放器的基本（iframe）或高級（頁內）代碼。</li>
+      <li>我們建議您使用基本內嵌程式碼，除非您以某種需要和頁面內指令碼的方式自訂播放程式。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="brightcove_configuration">布萊特灣配置</h2>
+    <p>您可以更新或新增至布萊特灣組態。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        去<strong>存儲-&gt; Brightcove視頻配置</strong>：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/adobe-magento-commerce/brightcove-configuration-page.png" alt="布萊特灣組態頁面"/>
+          <figcaption class="bcls-caption--image">布萊特灣組態頁面</figcaption>
+        </figure>
+      </li>
+      <li>用戶端識別碼、用戶端密碼、API 基底 URL (用於取得存取權杖) 和 Store ID 應該已經在安裝期間填入，但是您可以視需要更新這些值。</li>
+      <li>您也可以設定類別、主版和變體的視訊插槽數目。</li>
+      <li>最後，如果您要使用 [大量資料匯入] 選項 (下一節中的 DESCIED)，請輸入以逗號分隔的電子郵件地址清單，以接收與大量匯入相關的通知。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="bulk_import_data">大量匯入資料</h2>
+    <p>您可以大量匯入數種資料，包括要上傳至 Brightcove 的影片清單、影片類別指派，以及影片產品指派。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        去<strong>系統-&gt;導入</strong>打開批量導入頁面：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/adobe-magento-commerce/bulk-import-page.png" alt="大量匯入頁面"/>
+          <figcaption class="bcls-caption--image">大量匯入頁面</figcaption>
+        </figure>
+      </li>
+      <li>選取您要執行的匯入種類。</li>
+      <li>
+        以下是大量上傳視頻到布賴特灣頁面的示例：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/adobe-magento-commerce/bulk-upload-video-page.png" alt="大量上傳視訊頁面"/>
+          <figcaption class="bcls-caption--image">大量上傳視訊頁面</figcaption>
+        </figure>
+      </li>
+      <li>如果您沒有用於匯入的範例 CSV 檔案，您可以使用範例下載連結下載一個檔案。</li>
+      <li>
+        選擇<strong>導入行為</strong>：
+        <ul>
+          <li><strong>添加/更新</strong> -添加和替換現有記錄</li>
+          <li><strong>更換</strong> -替換現有記錄</li>
+          <li><strong>刪除</strong> -刪除現有記錄</li>
+        </ul>
+      </li>
+      <li>使用<strong>瀏覽</strong>按鈕，選擇您的CSV文件。</li>
+      <li>請點擊<strong>檢查數據</strong>確保數據有效。(如果 CSV 檔案不包含任何有效記錄，則不會顯示匯入選項)。</li>
+      <li>點擊<strong>進口</strong>按鈕導入數據。您應該會看到成功訊息。</li>
+    </ol>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">頁面內容</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  頁面最後更新日期為 9 月 16 日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>布萊特灣支援</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">系統狀態</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">聯絡支援</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">文獻資料</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>訓練</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">線上課程</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">註冊課程</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">布萊特灣大學</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">亮麗</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">聯絡我們</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> 布萊特灣公司版權所有</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+<div id="talla_wrapper">
+  <p style="text-align: right;position: relative;"><button style="background:rgb(2, 28, 146);color:Snow;padding:.3rem;position:fixed;right:0;bottom:1em;z-index:9999999" onclick="javascript:displayChat()">有問題嗎？ </button> </p>
+  <div id="talla_chat">
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="https://assets.talla.com/latest/embeddedjs/talla.js"></script>
+  <script src="/assets/js/talla-init.js"></script>
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
