@@ -1,0 +1,1129 @@
+﻿<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Brightcove Video Connect for Sitecore入門</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="產品標誌" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">選擇語言</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+Brightcove 
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="支持"/>聯繫支持</a><span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span><a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="系統狀態"/>系統狀況</a></span><br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">首頁</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/sitecore/">網站核心</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Brightcove Video Connect for Sitecore入門</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+        				<select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+					<option value="">其他布萊特灣文件</option>
+					
+						
+							<option value="https://support.brightcove.com">文件首頁</option>
+						
+					
+						
+							<option value="https://audience.support.brightcove.com">布萊特灣觀眾</option>
+						
+					
+						
+							<option value="https://beacon.support.brightcove.com">布萊特灣燈塔</option>
+						
+					
+						
+							<option value="https://campaign.support.brightcove.com">布萊特灣戰役</option>
+						
+					
+						
+							<option value="https://engage.support.brightcove.com">布萊特灣參與</option>
+						
+					
+						
+							<option value="https://live.support.brightcove.com">Brightcove Live</option>
+						
+					
+						
+							<option value="https://gallery.support.brightcove.com">Brightcove 圖庫</option>
+						
+					
+						
+							<option value="https://ssai.support.brightcove.com">布萊特灣</option>
+						
+					
+						
+							<option value="https://social.support.brightcove.com">布萊特灣社會</option>
+						
+					
+						
+							<option value="https://studio.support.brightcove.com">視訊雲端工作室</option>
+						
+					
+						
+							<option value="https://player.support.brightcove.com">布萊特灣球員開發</option>
+						
+					
+						
+							<option value="https://apis.support.brightcove.com">視訊雲端平台 API</option>
+						
+					
+						
+							<option value="https://sdks.support.brightcove.com">視訊雲端裝置開發套件</option>
+						
+					
+						
+							<option value="https://integrations.support.brightcove.com">整合與 CMS 連接器</option>
+						
+					
+						
+							<option value="https://general.support.brightcove.com">視訊雲端一般資訊</option>
+						
+					
+						
+							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
+						
+					
+				</select>
+						<nav class="sidenav" id="side_nav">
+
+          
+            
+            <h5><a href="/index.html">首頁</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">一般資訊<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/general/cms-integration-training-videos.html">CMS 整合訓練影片</a></li>
+                  
+                
+                  
+                    <li><a href="/general/integrating-your-cms-video-cloud.html">將CMS與Video Cloud集成</a></li>
+                  
+                
+                  
+                    <li><a href="/general/embedding-brightcove-players-cms.html">在 CMS 中嵌入布萊特灣玩家</a></li>
+                  
+                
+                  
+                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">在 CMS 中嵌入頁面內體驗</a></li>
+                  
+                
+                  
+                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">偵錯網路和 API 連線問題</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/wordpress/index.html">WordPress <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">開始使用布萊特灣視頻連接</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">組態</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">常見問題</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">安裝</a></li>
+                  
+                
+                  
+                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">使用連接器</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/drupal/index.html">德魯帕爾<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">開始使用 Drupal 的連接器</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">德魯帕爾 8-配置</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">德魯帕爾 8-內容管理</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">德魯帕爾 8-嵌入內容</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal 8-連接器安裝</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal 7-配置和使用</a></li>
+                  
+                
+                  
+                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">德魯帕爾 7-安裝</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/adobe/index.html">Adobe <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">開始使用 AEM 的連接器</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">組態</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">安裝</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概述</a></li>
+                  
+                
+                  
+                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">使用連接器</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/sitecore/index.html">網站核心<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">開始使用 Sitecore 的連接器</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/sharepoint/index.html">SharePoint <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">開始使用 SharePoint 的連接器</a></li>
+                  
+                
+                  
+                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">使用連接器</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ecommerce/index.html">電子商務<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecommerce/salesforce/index.html">銷售團隊商務雲端<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">銷售團隊商務雲端：安裝</a></li>
+                        
+                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">銷售團隊商務雲端：使用者指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecommerce/adobe-magento-commerce/index.html">Adobe 瑪琴托商務<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">安裝指南</a></li>
+                        
+                        <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">使用者指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/ecdn/index.html">電子 DN <strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/kollective/index.html">高理性<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/kollective/kollective-deployment-guide.html">多元化的 eCDN 部署指南</a></li>
+                        
+                        <li><a href="/ecdn/kollective/kollective-user-guide.html">多元化的 eDN 使用者指南</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/peer5/index.html">同儕 5 <strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">具備 Peer5 整合的布萊特灣</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+                  
+                    <li class="submenu-header">
+                      <a href="/ecdn/ramp/index.html">坡道<strong> + </strong></a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                        
+                        <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">開始使用斜坡 OmnicCache 和視訊雲端</a></li>
+                        
+                        <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">開始使用斜坡多重 + 和視訊雲端</a></li>
+                        
+                      </ul>
+                    </li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/web-conferencing/index.html">網路會議<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">布萊特灣現場變焦會議</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">思科 Webex 會議-布萊特灣直播</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">阿瓦雅會議在布萊特灣直播</a></li>
+                  
+                
+                  
+                    <li><a href="/web-conferencing/host-inxpo-live.html">在布萊特灣直播的 INXPO 活動</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">支援<strong> + </strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">檢視布萊特灣系統狀態頁面</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">聯絡銷售人員</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">開啟支援案例</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="導覽功能表"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">頁面內容</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="在新分頁中開啟" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>開始使用適用於 Sitecore 體驗平台的布萊特灣視訊連線</h1>
+  <summary>本主題提供 Sitecore 體驗平台的布萊特灣視訊連線概觀。</summary>
+  <aside class="bcls-aside bcls-aside--information language-editable">注意：網站核心 v9.0.x 的支援將於 2021 年 1 月 1 日結束</aside>
+  <table class="bcls-table">
+    <thead class="bcls-table__head">
+      <tr>
+        <th scope="col">插件版本</th>
+        <th scope="col">說明文件</th>
+        <th scope="col">下載</th>
+        <th scope="col">相容性說明</th>
+      </tr>
+    </thead>
+    <tbody class="bcls-table__body">
+      <tr>
+        <td>+9.3</td>
+        <td><a href="#contents">文件</a></td>
+        <td>
+          <p><a href="https://github.com/BrightcoveOS/Sitecore-Connector/releases/tag/9.3">插入</a></p>
+
+          <p><a href="https://github.com/BrightcoveOS/Sitecore-Connector/tree/v9.3">資源</a></p>
+        </td>
+        <td>
+          <p>支持<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> 9.3。</p>
+
+          <p>Brightcove維護的開源項目</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>+9.2</p>
+        </td>
+        <td><a href="#contents">文件</a></td>
+        <td>
+          <p><a href="https://github.com/BrightcoveOS/Sitecore-Connector/releases/tag/v9.2">插入</a></p>
+
+          <p><a href="https://github.com/BrightcoveOS/Sitecore-Connector/tree/v9.2">資源</a></p>
+        </td>
+        <td>
+          <p>支持<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> 9.2。</p>
+
+          <p>Brightcove維護的開源項目</p>
+        </td>
+      </tr>
+      <tr>
+        <td>9.1.1</td>
+        <td><a href="#contents">文件</a></td>
+        <td>
+          <p><a href="https://github.com/BrightcoveOS/Sitecore-Connector/releases/tag/v9.1.1">插入</a></p>
+
+          <p><a href="https://github.com/BrightcoveOS/Sitecore-Connector/tree/v9.1.1">資源</a></p>
+        </td>
+        <td>
+          <p>支持<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> 9.1.1。</p>
+
+          <p>Brightcove維護的開源項目</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>9.0.2</p>
+
+          <p>（版本將與支持的 Sitecore 版本相匹配）</p>
+        </td>
+        <td>
+          <p><a href="#contents">文件</a></p>
+        </td>
+        <td>
+          <p><a href="https://github.com/BrightcoveOS/Sitecore-Connector/releases/tag/v9.0.2">插入</a><sup>*</sup></p>
+
+          <p><a href="https://github.com/BrightcoveOS/Sitecore-Connector/tree/v9.0.2">資源</a><sup>*</sup></p>
+        </td>
+        <td>
+          <p>支持<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> 9.0.2。&nbsp;不再需要單獨安裝Media Framework；媒體框架&nbsp;是&nbsp;包括在Brightcove軟件包中。</p>
+
+          <p>用途&nbsp; Solr搜索引擎，Brightcove CMS和動態提取API，Brightcove HTML5 Player</p>
+
+          <p>維護開源項目&nbsp;通過Brightcove</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>2.2.0</p>
+
+          <p>（原為 3.0，更改為 2.2.0 以匹配媒體框架版本）</p>
+        </td>
+        <td>停產</td>
+        <td>
+          <p>停產</p>
+        </td>
+        <td>
+          <p><strong>生命的盡頭&nbsp;截至2020年1月1日</strong></p>
+
+          <p>支持<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> 8.1和Media Framework 2.1 v150625，<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> 8.2修訂版161221和Media Framework 2.2修訂版160927</p>
+
+          <p>用途&nbsp; Lucene搜索引擎，Brightcove CMS和動態提取API，Brightcove HTML5 Player</p>
+
+          <p>Brightcove維護的開源項目</p>
+        </td>
+      </tr>
+      <tr>
+        <td><span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework Brightcove Edition 2.1修訂版。+150323</td>
+        <td>停產</td>
+        <td>停產</td>
+        <td>
+          <p>支持<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> 8.0與Media Framework 2.1 v150323</p>
+
+          <p>用途&nbsp; Lucene搜索引擎，Brightcove傳統媒體API，Brightcove傳統Flash SmartPlayer</p>
+
+          <p>擁有和分配<span translate="No">Video Cloud</span><span translate="No">Sitecore</span></p>
+        </td>
+      </tr>
+      <tr>
+        <td><span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework 1.4 Brightcove版</td>
+        <td>停產</td>
+        <td>停產</td>
+        <td>
+          <p>支持<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> 7.x和Media Framework 1.4，&nbsp;</p>
+
+          <p>用途&nbsp; Lucene搜索引擎，Brightcove傳統媒體API，Brightcove傳統Flash SmartPlayer</p>
+
+          <p>擁有和分配<span translate="No">Video Cloud</span><span translate="No">Sitecore</span></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>*版權2019 &nbsp;<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>，版權所有2019 Brightcove</p>
+  <p>根據Apache許可版本2.0（“許可”）許可；除非遵守許可，否則不得使用此文件。您可以在以下位置獲得許可的副本：<a style="box-sizing: border-box; background-color: transparent; color: rgb(3, 102, 214);" href="https://www.apache.org/licenses/LICENSE-2.0"> https://www.apache.org/licenses/LICENSE-2.0</a>。&nbsp;除非適用法律要求或以書面形式同意，否則根據“許可”分發的軟件將按“原樣”分發，而沒有任何明示或暗示的保證或條件。有關許可下特定的語言管理權限和限制，請參閱許可。</p>
+  <p>有關此連接器的幫助，請填寫此<a href="https://files.brightcove.com/BrightcoveConnectforSitecoreSupportWorksheet.docx">工作表</a>並附上支持票<a href="https://supportportal.brightcove.com/create">Brightcove客戶支持</a>。</p>
+  <p>&nbsp;</p>
+  <div>
+    <h2 id="contents">內容</h2>
+    <ul>
+      <li><a href="#installing">安裝Brightcove Video Connect <span translate="No">Video Cloud</span><span translate="No">Sitecore</span>體驗平台</a></li>
+      <li><a href="#linking">連結中<span translate="No">Video Cloud</span>帳目</a></li>
+      <li><a href="#players">定義<span translate="No">Video Cloud</span>玩家們</a></li>
+      <li><a href="#videos">導入，添加，預覽和刪除視頻</a></li>
+      <li><a href="#search">搜索視頻和播放列表</a></li>
+      <li><a href="#playlists">導入，添加，預覽和刪除播放列表</a></li>
+      <li><a href="#embedding">將視頻添加到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>網站</a></li>
+      <li><a href="#synchronization">之間的同步<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>和<span translate="No">Video Cloud</span></a></li>
+      <li><a href="#analytics">播放事件分析</a></li>
+    </ul>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="installing">安裝Brightcove Video Connect <span translate="No">Video Cloud</span><span translate="No">Sitecore</span>不育系</h2>
+    <p>本主題涵蓋 Brightcove 視訊連線模組的安裝程序。</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5026949771001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <h3>安裝<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>媒體框架2.1</h3>
+    <p>Brightcove Video Connect需要<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>首先要安裝媒體框架。的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework是使用以下工具安裝的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>安裝嚮導。請按照安裝嚮導顯示的說明進行操作。</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-install-install-package.png"/></div>
+    <h3>從工作流程發行頁面事件</h3>
+    <p>的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework包含許多頁面事件，必須從工作流中釋放這些頁面事件，然後才能使用它們。</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-install-playback-events.png"/></div>
+    <ol class="bcls-tasklist">
+      <li>打開<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>工作箱</li>
+      <li>選取分析工作流程</li>
+      <li>部署下列頁面事件：
+        <ul>
+          <li>播放已變更</li>
+          <li>播放完成</li>
+          <li>播放錯誤</li>
+          <li>播放開始</li>
+        </ul>
+      </li>
+      <li>發佈頁面事件</li>
+    </ol>
+    <h3>安裝Brightcove Video Connect <span translate="No">Video Cloud</span><span translate="No">Sitecore</span>體驗平台</h3>
+    <p>Brightcove Video Connect適用於<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>使用<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>安裝嚮導。請按照安裝嚮導顯示的說明進行操作。的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>可通過上表中的鏈接下載該插件。此 zip 檔案包含來源和外掛程式套件。&nbsp;先解壓縮然後&nbsp;將內部zip包上傳到您的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>實例。</p>
+    <h3>報表資料庫組態</h3>
+    <p>為了<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>要使用Media Framework報告，必須將新的事實表添加到體驗數據庫（xDB）報告數據庫。將創建這個新表的腳本在 SDN 上可用。您必須在 XDB 報告資料庫上執行此指令碼。此步驟應由您的資料庫管理員完成。</p>
+    <p class="BCL-aside">注意：可以安裝多個<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>媒體框架連接器。無論您已安裝多少個不同的連接器，這個指令碼只需要每個報告資料庫執行一次。</p>
+    <h3>多伺服器組態</h3>
+    <p><span translate="No">Video Cloud</span><span translate="No">Sitecore</span>可以將Media Framework安裝在多服務器內容創作環境中。如果你的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>以這種方式配置環境時，需要配置以下內容：</p>
+    <h4>內容管理伺服器</h4>
+    <p>如果您使用排程器來同步處理媒體，則只有一個內容管理 (CM) 伺服器需要設定排程器。從其他 CM 伺服器上的設定檔中移除排定的工作。的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>事件隊列將處理使其他CM服務器保持同步。</p>
+    <p class="BCL-aside">注意：在多個 CM 伺服器上設定排程器不會造成問題，但這樣做並沒有好處。</p>
+    <h4>內容傳遞伺服器</h4>
+    <p>在每個內容傳遞 (CD) 伺服器上，從指定的設定檔中移除下列索引。只有在 CM 環境中才需要此索引。</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>檔案：</td>
+          <td><code translate="No"><span translate="No">Video Cloud</span> <span translate="No">Sitecore</span> .MediaFramework.Services.Brightcove.config</code></td>
+        </tr>
+        <tr>
+          <td>索引名稱：</td>
+          <td><code translate="No">MediaFramework_Brightcove_Index</code></td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;
+    <p>設定 CD 伺服器時，您可能會發現從 CM 伺服器複製組態檔很方便。如果您這麼做，且已新增排程器來同步處理媒體，您應該從 CD 伺服器上的設定檔中移除排定的工作。媒體同步處理不應該在 CD 伺服器上執行。它應該在一個 CM 伺服器上執行。發佈是用來讓媒體項目可以在 CD 伺服器上使用。</p>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="linking">連結中<span translate="No">Video Cloud</span>帳目</h2>
+    <p>本主題介紹如何在中創建帳戶<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>對應於Brightcove <span translate="No">Video Cloud</span>帳戶。</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5028605017001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <h3>從布萊特灣取得帳戶憑證</h3>
+    <p>為了使Media Framework連接到Brightcove <span translate="No">Video Cloud</span>，必須將Brightcove的帳戶憑據添加到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>。本節介紹如何在Brightcove中找到帳戶憑據。下一節介紹如何將這些憑據添加到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>。</p>
+    <ol class="bcls-tasklist">
+      <li>登錄到Brightcove <span translate="No">Video Cloud</span>。請注意「發行者識別碼」值。您將需要輸入<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>在下一節中。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-accounts-publisher-id.png"/></div>
+      </li>
+      <li>瀏覽至「管理員」。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-accounts-admin.png"/></div>
+      </li>
+      <li>導覽至 API 驗證。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-accounts-admin-api-authentication.png"/></div>
+      </li>
+      <li>註冊新的應用程式。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-accounts-admin-register-button.png"/></div>
+      </li>
+      <li>為應用程式命名、設定帳戶存取權，以及啟用 API。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-accounts-admin-auth-form.png"/></div>
+      </li>
+      <li>注意客戶端ID和客戶端密鑰。您將需要輸入它們<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>在下一節中。
+        <div><img width="400" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-accounts-admin-auth-credentials.png"/></div>
+      </li>
+    </ol>
+    <h3>將Brightcove帳戶添加到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span></h3>
+    <p>本節介紹如何將Brightcove帳戶添加到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>。</p>
+    <ol class="bcls-tasklist">
+      <li>登錄到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>桌面。</li>
+      <li>開啟 [媒體庫]。</li>
+      <li>導覽至 [媒體庫] &gt; [媒體架構] &gt; [帳戶]。</li>
+      <li>新增新的布萊特灣帳號項目。</li>
+      <li>輸入上一節所述的「發行者識別碼」、「用戶端識別碼」和「用戶端密碼」值。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="/assets/images/sharepoint/node16608-accounts-admin-auth-credentials.png"/></div>
+      </li>
+      <li>儲存料件。</li>
+    </ol>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="players">定義<span translate="No">Video Cloud</span>玩家們</h2>
+    <p>需要播放器才能顯示單一影片或影片播放清單。播放器定義了什麼樣的功能可用於誰想要觀看視頻的訪問者。<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework允許內容作者添加新播放器，編輯現有播放器和刪除現有播放器。</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5072647298001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <h3>新增播放程式</h3>
+    <p>本節介紹如何手動創建<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>與玩家對應的項目。</p>
+    <ol class="bcls-tasklist">
+      <li>在Brightcove <span translate="No">Video Cloud</span>，導航至“玩家”部分。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-players-megamenu.png"/></div>
+      </li>
+      <li>選擇要創建的播放器<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>。請注意播放器 ID 值。您將需要輸入<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>在下一節中。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-players-list.png"/></div>
+      </li>
+      <li>在<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>，在媒體庫中，選擇Brightcove帳戶項目。</li>
+      <li>選擇帳戶項。</li>
+      <li>選取 [玩家] 項目。</li>
+      <li>新增新的布萊特灣影片播放器物品。系統會提示您輸入玩家 ID。輸入Brightcove的值<span translate="No">Video Cloud</span>。</li>
+    </ol>
+    <h3>設定預設播放器</h3>
+    <p>為了在其中預覽視頻和播放列表<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>，則必須指定默認播放器。本節說明如何設定預設播放器。</p>
+    <ol class="bcls-tasklist">
+      <li>在<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>，在媒體庫中，選擇Brightcove帳戶項目。</li>
+      <li>選擇帳戶項。</li>
+      <li>選擇設置項。</li>
+      <li>設定「預設視訊播放程式」欄位和「預設播放清單播放程式」欄位的值。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-players-default.png"/></div>
+      </li>
+      <li>保存物品</li>
+    </ol>
+    <h3>編輯播放程式</h3>
+    <p>播放器項目就像其他任何項目一樣被編輯<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>項目。</p>
+    <h3>刪除播放程式</h3>
+    <p>播放器項目與其他任何項目一樣被刪除<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>項目。</p>
+    <p class="BCL-aside">注意：從中刪除播放器<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>不會導致將播放器從Brightcove中刪除<span translate="No">Video Cloud</span>。</p>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="videos">匯入、新增、預覽和刪除視訊</h2>
+    <p><span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework允許內容作者從其本地計算機上載視頻，以及編輯和刪除現有視頻。您可以定義新標籤來組織視訊內容。</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5077193027001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <h3>匯入視訊</h3>
+    <p>一種<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>內容作者或管理員可以手動觸發媒體導入過程。</p>
+    <aside class="bcls-aside bcls-aside--information">導入視頻時，<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>將反映視頻導入的當前日期，而不是其中的上傳日期<span translate="No">Video Cloud</span>。如果要移動以前存在的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>實施中，您可以遷移以前的內容，連接器將識別這些視頻。</aside>
+    <p>Brightcove 視訊連線外掛程式包含定期自動同步處理媒體的代理程式。代理在以下位置定義：</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>配置文件：</td>
+          <td><code translate="No"><span translate="No">Video Cloud</span> <span translate="No">Sitecore</span> .MediaFramework.Services.Brightcove.config</code></td>
+        </tr>
+        <tr>
+          <td>代理程式名稱：</td>
+          <td><code translate="No">MediaFramework_Import_Brightcove</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <ol class="bcls-tasklist">
+      <li>通過右鍵單擊頂部菜單並選擇媒體框架顯示媒體框架功能區。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-menu.png"/></div>
+      </li>
+      <li>按一下媒體架構功能區。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-media-framework.png"/></div>
+      </li>
+      <li>按一下「全部匯入」按鈕。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-import-all.png"/></div>
+      </li>
+      <li>匯入程序執行時，會出現狀態方塊。當狀態方塊消失時，匯入程序已完成。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-progress-bar.png"/></div>
+      </li>
+      <li>若要確認媒體已匯入，請按一下 [搜尋] 索引標籤。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-search-tab.png"/></div>
+      </li>
+      <li>執行搜尋。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-search.png"/></div>
+      </li>
+      <li>篩選視訊。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-filter.png"/></div>
+      </li>
+      <li>顯示搜索結果。
+        <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-video-list.png"/></div>
+      </li>
+    </ol>
+    <h3>加入視訊</h3>
+    <p><span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework允許內容作者添加新視頻。</p>
+    <ol class="bcls-tasklist">
+      <li>打開<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>媒體庫。</li>
+      <li>瀏覽至您要建立播放清單的影片帳戶。</li>
+      <li>導航到“媒體內容”項。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-add-media-content.png"/></div>
+      </li>
+      <li>點擊布萊特灣視頻。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-playlists-add-button.png"/></div>
+      </li>
+      <li>按一下「新增檔案」。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-add-files.png"/></div>
+      </li>
+      <li>選擇您要從本機電腦上傳的檔案。</li>
+      <li>按一下「開始」。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-add-files-start.png"/></div>
+      </li>
+      <li>影片上傳後，關閉上傳者視窗。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-add-files-uploaded.png"/></div>
+      </li>
+    </ol>
+    <h3>定義標籤</h3>
+    <p><span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework允許內容作者添加新標籤。</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-tags-item.png"/><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-tags-button.png"/></div>
+    <ol class="bcls-tasklist">
+      <li>打開<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>媒體庫。</li>
+      <li>瀏覽至您要為其建立標籤之影片的帳戶。</li>
+      <li>瀏覽至「標籤」項目。</li>
+      <li>按一下「布萊特灣標籤」。</li>
+      <li>輸入料號名稱。這將成為標籤。</li>
+    </ol>
+    <h3>編輯視訊和標籤</h3>
+    <p>視頻和標籤項的編輯方式與其他任何項一樣<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>項目。</p>
+    <h3>刪除視訊和標籤</h3>
+    <p>視頻和標籤項與其他任何項一樣被刪除<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>項目。</p>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="search">搜尋影片和播放清單</h2>
+    <p>您可以在影片和播放清單的名稱和說明中搜尋文字字串。您也可以在自訂欄位中搜尋文字字串來尋找視訊。</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5078428048001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <h3>搜尋</h3>
+    <p>按一下 [搜尋] 索引標籤以搜尋媒體。在名稱或描述欄位中輸入要搜尋的文字。</p>
+    <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-search-tab.png"/></div>
+    <p>按一下放大鏡以執行搜尋。</p>
+    <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-search.png"/></div>
+    <h3>篩選</h3>
+    <p>搜尋結果可依類型 (例如影片或播放清單)、日期和其他屬性篩選。</p>
+    <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-filter.png"/></div>
+    <p>顯示搜索結果。</p>
+    <div><img width="850" class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-videos-import-video-list.png"/></div>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="playlists">匯入、新增、預覽及刪除播放清單</h2>
+    <p>播放清單是單一播放器中的視訊集合。<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework允許內容作者添加新的播放列表，編輯現有的播放列表和刪除現有的播放列表。</p>
+    <aside class="bcls-aside bcls-aside--information">導入播放列表時，<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>將反映導入播放列表的當天日期，而不是其中的創建日期<span translate="No">Video Cloud</span>。如果要移動以前存在的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>實施中，您可以遷移以前的內容，連接器將識別這些視頻。</aside>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5078707813001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <h3>新增播放清單</h3>
+    <p><span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework允許內容作者添加新的播放列表。</p>
+    <ol class="bcls-tasklist">
+      <li>打開<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>媒體庫。</li>
+      <li>瀏覽至您要建立播放清單之影片的帳戶。</li>
+      <li>導航到“媒體內容”項。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-playlists-add-button.png"/></div>
+      </li>
+      <li>新增新的布萊特灣播放清單項目。
+        <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-playlists-add-media-content.png"/></div>
+      </li>
+      <li>在「名稱」欄位中，輸入視訊的描述性名稱。</li>
+      <li>在「視訊 ID」欄位中，選取您要包含在播放清單中的影片。</li>
+    </ol>
+    <h3>編輯播放清單</h3>
+    <p>播放列表項目的編輯方式與其他任何項目一樣<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>項目。</p>
+    <h3>刪除播放清單</h3>
+    <p>播放列表項與其他任何項一樣被刪除<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>項目。</p>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="embedding">將視頻添加到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>網站</h2>
+    <p><span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework允許內容作者以多種方式將媒體插入其頁面。本章介紹了可用的選項。</p>
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5080020778001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <h3>RTF 編輯器</h3>
+    <p>RTF 欄位可讓內容作者將格式化的內容插入其頁面。內容作者使用 RTF 編輯器來建立和編輯此格式化的內容。本節介紹了<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework將添加到RTF編輯器中。</p>
+    <h4>嵌入媒體</h4>
+    <p>媒體可以直接嵌入到富文本字段中。</p>
+    <ol class="bcls-tasklist">
+      <li>在 RTF 編輯器中，按一下「嵌入媒體」按鈕。</li>
+      <li>使用搜索屏幕查找要插入的媒體。按一下代表您要插入之媒體的列。按一下「下一步 &gt;」按鈕。</li>
+      <li>根據您選擇的媒體類型，您將看到其他選項。例如，如果您選擇視頻，則必須指定用於顯示視頻的播放器以及播放器的尺寸。按一下「完成」。</li>
+      <li>媒體內嵌在 RTF 欄位中。</li>
+    </ol>
+    <h4>嵌入媒體連結</h4>
+    <p>可以在 RTF 欄位中插入媒體的連結。</p>
+    <ol class="bcls-tasklist">
+      <li>在 RTF 編輯器中，按一下「內嵌媒體連結」按鈕。</li>
+      <li>使用搜索屏幕查找要插入的媒體。按一下代表您要插入之媒體的列。按一下「下一步 &gt;」按鈕。</li>
+      <li>輸入「連結標題」的值。這是將出現在媒體鏈接的文本。<br/>另外，根據您選擇的媒體類型，您將看到其他選項。例如，如果您選擇視頻，則必須指定用於顯示視頻的播放器以及播放器的尺寸。按一下「完成」。</li>
+      <li>連結內嵌在 RTF 欄位中。</li>
+    </ol>
+    <h3>彩現</h3>
+    <p>彩現允許將內容放置在頁面上的特定位置。<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework包含一個渲染，允許內容作者在頁面中插入媒體。</p>
+    <h4>嵌入媒體顯示</h4>
+    <ol class="bcls-tasklist">
+      <li>使用「頁面編輯器」將呈現新增至預留位置。</li>
+      <li>選取「內嵌媒體」顯示。</li>
+      <li>彩現已加入至預留位置。現在點擊嵌入媒體元素按鈕。</li>
+      <li>使用搜索屏幕查找要插入的媒體。按一下代表您要插入之媒體的列。按一下「下一步 &gt;」按鈕。</li>
+      <li>根據您選擇的媒體類型，您將看到其他選項。例如，如果您選擇視頻，則必須指定用於顯示視頻的播放器以及播放器的尺寸。按一下「完成」。</li>
+      <li>已選取媒體進行彩現。</li>
+    </ol>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="synchronization">之間的同步<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>和<span translate="No">Video Cloud</span></h2>
+    <p>本節介紹如何使視頻和播放列表之間保持同步<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>適用於以下情況：</p>
+    <ul>
+      <li>從布萊特灣刪除影片和播放清單時</li>
+      <li>當視頻和播放列表添加到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span></li>
+      <li>從中刪除視頻和播放列表時<span translate="No">Video Cloud</span><span translate="No">Sitecore</span></li>
+    </ul>
+    <p>從Brightcove導入到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>之前已被覆蓋<a href="#videos">這裡</a>。</p>
+    <h3>匯出視訊</h3>
+    <p>內<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>，使用以下命令訪問Brightcove媒體<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>在媒體導入過程中創建的項目。由於他們是<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>項目，用戶可以更改這些項目。媒體導出過程負責從中導出更改<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>前往Brightcove。</p>
+    <h4>自動匯出媒體</h4>
+    <p>當一個<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>在以下位置創建，保存或刪除與Brightcove媒體相對應的項目：<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>客戶，這些更改將被推送到Brightcove。</p>
+    <h4>即時匯出</h4>
+    <p>在中創建新媒體項目時<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>，默認情況下執行實時導出。這表示會立即執行匯出工作。</p>
+    <h4>防止自動匯出</h4>
+    <p>您可能不希望在其中進行更改<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>出口到Brightcove。您可能希望連接來自<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>到Brightcove為只讀，其中將Brightcove更改導入到<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>但是哪裡<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>更改不會導出到Brightcove。</p>
+    <p>為了防止在<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>從導出到Brightcove之前，清除以下設置的值：</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>配置文件：</td>
+          <td><code translate="No"><span translate="No">Video Cloud</span> <span translate="No">Sitecore</span> .MediaFramework.config</code></td>
+        </tr>
+        <tr>
+          <td>設定名稱：</td>
+          <td><code translate="No"><span translate="No">Video Cloud</span> <span translate="No">Sitecore</span> .MediaFramework.ExportDatabases</code></td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;
+    <p class="BCL-aside">注意：此設置適用於<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>媒體框架，而不僅僅是Brightcove Video Connect插件。變更此設定將會套用至所有連接器和所有帳戶。</p>
+    <h3>資料清除</h3>
+    <p>清理過程用於保持<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>和Brightcove數據同步。</p>
+    <h4><span translate="No">Video Cloud</span><span translate="No">Sitecore</span>清理</h4>
+    <p><span translate="No">Video Cloud</span><span translate="No">Sitecore</span>清理是在Brightcove中刪除媒體以及相應媒體後運行的過程<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>項目必須刪除。由於Brightcove一無所知<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>，Brightcove無法通知<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>該媒體已被刪除。因此，<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>必須積極主動。</p>
+    <h4>手動清除</h4>
+    <p>一種<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>內容作者或管理員可以通過單擊“內容編輯器”中的以下按鈕來手動觸發清除過程：</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-cleanup-cleanup-all-button.png"/></div>
+    <h4>自動清除</h4>
+    <p>Brightcove 視訊連線外掛程式包含定期自動執行清理程序的代理程式。代理在以下位置定義：</p>
+    <table class="bcls-table">
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>配置文件：</td>
+          <td><code translate="No"><span translate="No">Video Cloud</span> <span translate="No">Sitecore</span> .MediaFramework.Services.Brightcove.config</code></td>
+        </tr>
+        <tr>
+          <td>代理程式名稱：</td>
+          <td><code translate="No">MediaFramework_Cleanup_Brightcove</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>布萊特灣清理</h4>
+    <p>Brightcove清理是在刪除媒體項時運行的過程<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>並且必須刪除或禁用Brightcove中的相應媒體。由於Brightcove知道媒體項目已刪除，<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>能夠通知Brightcove應該刪除或禁用Brightcove中的相應媒體。</p>
+    <p>當媒體項目在<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>客戶端，將在導出隊列中進行輸入。此程序與儲存媒體項目時相同。</p>
+  </div>
+  <div class="BCL-concept">
+    <h2 id="analytics">播放事件分析</h2>
+    <p>的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework允許記錄視頻播放事件以供在<span translate="No">Video Cloud</span><span translate="No">Sitecore</span>數字營銷系統（DMS）。本節涵蓋可用的選項。</p>
+    <h3>回放事件</h3>
+    <p>播放事件用於記錄 DMS 頁面事件作為視訊播放器動作的結果。例如，當視頻播放開始時，可以寫入 DMS 頁面事件。</p>
+    <h4>預設回放事件</h4>
+    <p><span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework帶有以下播放事件：</p>
+    <ul>
+      <li>播放開始</li>
+      <li>播放完成</li>
+      <li>播放錯誤</li>
+    </ul>
+    <h4>設定帳號的播放事件</h4>
+    <p>依預設，會錄製回放開始和回放已完成的事件。此功能會在 [Brightcove 帳號] 項目下的 [設定] 項目上啟用。</p>
+    <p>「設定」項目有一個名為「播放事件規則」的欄位。定義了一個規則，告訴媒體框架記錄在視頻和播放列表下指定的事件。</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-analytics-rules.png"/></div>
+    <h4>停用帳號的播放事件</h4>
+    <p>您可以針對特定帳號停用所有播放事件。</p>
+    <ol class="bcls-tasklist">
+      <li>在內容編輯器中，導覽至 [媒體庫] &gt; [媒體架構] &gt; [帳戶] 下的帳戶。</li>
+      <li>選擇設置項。</li>
+      <li>「播放事件規則」(Playback Event Rules) 欄位描述必須符合的條件，才能註冊播放事件。默認情況下，條件是「哪裡真」，意思是「總是」。按一下「編輯規則」按鈕以變更條件，或移除現有規則。</li>
+    </ol>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-analytics-rules-empty.png"/></div>
+    <h4>指定媒體的播放事件</h4>
+    <p>每個播放清單和視訊項目都有名為「事件」的欄位。此欄位決定要處理指定項目的播放事件。</p>
+    <p>下列螢幕擷取畫面表示已為視訊指定播放事件：</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-analytics-events.png"/></div>
+    <p class="BCL-aside">注意：標準值可用來確保所有播放清單和影片都會記錄特定活動，但該欄位也允許個別播放清單和影片選取自己的活動。</p>
+    <p class="BCL-aside">注意：只有在 Brightcove 帳戶項目下的 [設定] 項目的 [播放事件規則] 欄位設定為 [新增媒體項目事件] 動作時，才會記錄這些事件。請參閱第 3.1.2 節。</p>
+    <h4>建立新的播放事件</h4>
+    <p>您可以新增播放事件，以擷取更多有關視訊播放的詳細資訊。</p>
+    <ol class="bcls-tasklist">
+      <li>在內容編輯器中，導航到系統 &gt; 模塊 &gt; 媒體框架 &gt; 播放事件</li>
+      <li>使用範本播放事件新增項目</li>
+      <li>對於頁面事件字段，請選擇播放已更改</li>
+      <li>在「參數」(Parameter) 欄位中，您可以輸入下列其中一種格式的值：
+        <ol type="a">
+          <li>數字-視頻播放這個秒數後，頁面事件被記錄。有效值的範例為 15</li>
+          <li>百分比-播放視頻後，會記錄頁面事件。有效值的範例為 50%</li>
+        </ol>
+      </li>
+      <li>保存物品</li>
+      <li>發佈項目</li>
+      <li>現在，您可以將新的頁面事件添加到您的播放列表和視頻</li>
+    </ol>
+    <p class="BCL-aside">注意：請記得將新的播放事件指派至播放清單和影片。否則，事件將不會被記錄。</p>
+    <h3>報告</h3>
+    <p>的<span translate="No">Video Cloud</span><span translate="No">Sitecore</span> Media Framework包含許多與視頻播放有關的報告。</p>
+    <h4>開始播放</h4>
+    <p>此報表會顯示觸發視訊啟動事件的影片清單。</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-analytics-reports-started-playback.png"/></div>
+    <h4>已完成的播放</h4>
+    <p>此報表會顯示觸發視訊已完成事件的視訊清單。</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-analytics-reports-completed-playback.png"/></div>
+    <h4>不完整的播放</h4>
+    <p>此報表會顯示已觸發視訊啟動事件但未觸發視訊已完成事件的視訊清單。</p>
+    <div><img class="bcls-image--no-border" alt="" src="https://img.brightcove.com/node16608-analytics-reports-incomplete-playback.png"/></div>
+  </div>
+  <p><br/><b><a href="mailto:tbaldwin@brightcove.com?subject=Comment%20about%20https://support.brightcove.com/en/video-cloud/docs/getting-started-brightcove-connect-sitecore-experience-platform">意見或建議？</a></b></p>
+</article>
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">頁面內容</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>布萊特灣支援</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">系統狀態</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">聯絡支援</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">文獻資料</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>訓練</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">線上課程</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">註冊課程</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">布萊特灣大學</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">亮麗</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">聯絡我們</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> 布萊特灣公司版權所有</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
