@@ -1,16 +1,20 @@
-var appID = "00c26be3-4421-41e6-bb00-1dee68740f67";
+---
+layout: null
+---
+
+var appID = "{{ site.talla_appID }}";
 // token for anonymous profile
 var token =
-'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODI4MDQzNDF9.RYf2x65FXvdDURzM h00i76KfUrYlsDLsw6mVuEv6zmE';
+'{{ site.talla_token }}';
 // -----
   Talla.config = Talla.init(
     appID,
     Talla.OptionJWTCredentials(token),
-    Talla.OptionBotName("Video Cloud CMS Connectors Doc Search"),
+    Talla.OptionBotName("{{ site.product }} Doc Search"),
     Talla.OptionAnonymous(true),
-    Talla.OptionThemeColor('rgb(239, 108, 42)'),
-    Talla.OptionDisplayName('Search Video Cloud CMS Connectors Docs'),
-    Talla.OptionKnowledgeGroups(['43ca4ee2-30b1-418b-9e24-55417c498b6a']),
+    Talla.OptionThemeColor('{{ site.product_color }}'),
+    Talla.OptionDisplayName('Search {{ site.product }} Docs'),
+    Talla.OptionKnowledgeGroups(['{{ site.talla_knowledgegroup }}']),
     Talla.OptionWideBeacon(true),
     Talla.OptionBeaconCTA("Have a question?"),
     Talla.OptionOpenIcon('https://support.brightcove.com/site-assets/images/site/search.png'),

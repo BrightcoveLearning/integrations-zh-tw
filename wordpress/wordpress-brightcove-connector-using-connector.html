@@ -1,431 +1,8 @@
-﻿<!doctype html>
-<html lang="zh-TW">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>刀片印刷機連接器：使用連接器</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Video_Cloud_Logo.svg" alt="產品標誌" style="max-height: 100px;max-width: 232px;"/></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">選擇語言</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-Brightcove 
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="支持"/>聯繫支持</a><span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span><a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="系統狀態"/>系統狀況</a></span><br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">首頁</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/wordpress/">WordPress的</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">刀片印刷機連接器：使用連接器</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-      <div class="col-sm-3 left-side-bar">
-        				<select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-					<option value="">其他布萊特灣文件</option>
-					
-						
-							<option value="https://support.brightcove.com">文件首頁</option>
-						
-					
-						
-							<option value="https://audience.support.brightcove.com">布萊特灣觀眾</option>
-						
-					
-						
-							<option value="https://beacon.support.brightcove.com">布萊特灣燈塔</option>
-						
-					
-						
-							<option value="https://campaign.support.brightcove.com">布萊特灣戰役</option>
-						
-					
-						
-							<option value="https://engage.support.brightcove.com">布萊特灣參與</option>
-						
-					
-						
-							<option value="https://live.support.brightcove.com">Brightcove Live</option>
-						
-					
-						
-							<option value="https://gallery.support.brightcove.com">Brightcove 圖庫</option>
-						
-					
-						
-							<option value="https://ssai.support.brightcove.com">布萊特灣</option>
-						
-					
-						
-							<option value="https://social.support.brightcove.com">布萊特灣社會</option>
-						
-					
-						
-							<option value="https://studio.support.brightcove.com">視訊雲端工作室</option>
-						
-					
-						
-							<option value="https://player.support.brightcove.com">布萊特灣球員開發</option>
-						
-					
-						
-							<option value="https://apis.support.brightcove.com">視訊雲端平台 API</option>
-						
-					
-						
-							<option value="https://sdks.support.brightcove.com">視訊雲端裝置開發套件</option>
-						
-					
-						
-							<option value="https://integrations.support.brightcove.com">整合與 CMS 連接器</option>
-						
-					
-						
-							<option value="https://general.support.brightcove.com">視訊雲端一般資訊</option>
-						
-					
-						
-							<option value="https://zencoder.support.brightcove.com">Zencoder</option>
-						
-					
-				</select>
-						<nav class="sidenav" id="side_nav">
-
-          
-            
-            <h5><a href="/index.html">首頁</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">一般資訊<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/cms-integration-training-videos.html">CMS 整合訓練影片</a></li>
-                  
-                
-                  
-                    <li><a href="/general/integrating-your-cms-video-cloud.html">將CMS與Video Cloud集成</a></li>
-                  
-                
-                  
-                    <li><a href="/general/embedding-brightcove-players-cms.html">在 CMS 中嵌入布萊特灣玩家</a></li>
-                  
-                
-                  
-                    <li><a href="/general/embedding-brightcove-page-experiences-cms.html">在 CMS 中嵌入頁面內體驗</a></li>
-                  
-                
-                  
-                    <li><a href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">偵錯網路和 API 連線問題</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/wordpress/index.html">WordPress <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">開始使用布萊特灣視頻連接</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-configuration.html">組態</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-frequently-asked-questions.html">常見問題</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-installation.html">安裝</a></li>
-                  
-                
-                  
-                    <li><a href="/wordpress/wordpress-brightcove-connector-using-connector.html">使用連接器</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/drupal/index.html">德魯帕爾<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">開始使用 Drupal 的連接器</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-configuration.html">德魯帕爾 8-配置</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-content-management.html">德魯帕爾 8-內容管理</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-embedding-content.html">德魯帕爾 8-嵌入內容</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal 8-連接器安裝</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal 7-配置和使用</a></li>
-                  
-                
-                  
-                    <li><a href="/drupal/drupal-7-brightcove-connector-installation.html">德魯帕爾 7-安裝</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/adobe/index.html">Adobe <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">開始使用 AEM 的連接器</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-configuration.html">組態</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-installation.html">安裝</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-overview.html">概述</a></li>
-                  
-                
-                  
-                    <li><a href="/adobe/adobe-aem-brightcove-connector-using-connector.html">使用連接器</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/sitecore/index.html">網站核心<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">開始使用 Sitecore 的連接器</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/sharepoint/index.html">SharePoint <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">開始使用 SharePoint 的連接器</a></li>
-                  
-                
-                  
-                    <li><a href="/sharepoint/sharepoint-brightcove-connector-4041-using-connector.html">使用連接器</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/ecommerce/index.html">電子商務<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecommerce/salesforce/index.html">銷售團隊商務雲端<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">銷售團隊商務雲端：安裝</a></li>
-                        
-                        <li><a href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">銷售團隊商務雲端：使用者指南</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecommerce/adobe-magento-commerce/index.html">Adobe 瑪琴托商務<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecommerce/adobe-magento-commerce/installation-guide.html">安裝指南</a></li>
-                        
-                        <li><a href="/ecommerce/adobe-magento-commerce/user-guide.html">使用者指南</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/ecdn/index.html">電子 DN <strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/kollective/index.html">高理性<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/kollective/kollective-deployment-guide.html">多元化的 eCDN 部署指南</a></li>
-                        
-                        <li><a href="/ecdn/kollective/kollective-user-guide.html">多元化的 eDN 使用者指南</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/peer5/index.html">同儕 5 <strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/peer5/brightcove-with-peer5-integration.html">具備 Peer5 整合的布萊特灣</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/ecdn/ramp/index.html">坡道<strong> + </strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">開始使用斜坡 OmnicCache 和視訊雲端</a></li>
-                        
-                        <li><a href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">開始使用斜坡多重 + 和視訊雲端</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/web-conferencing/index.html">網路會議<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/web-conferencing/host-zoom-conference-brightcove-live.html">布萊特灣現場變焦會議</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">思科 Webex 會議-布萊特灣直播</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-avaya-conference-brightcove-live.html">阿瓦雅會議在布萊特灣直播</a></li>
-                  
-                
-                  
-                    <li><a href="/web-conferencing/host-inxpo-live.html">在布萊特灣直播的 INXPO 活動</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html">支援<strong> + </strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">檢視布萊特灣系統狀態頁面</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">聯絡銷售人員</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">開啟支援案例</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="導覽功能表"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">頁面內容</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="在新分頁中開啟" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
+---
+title: 'WordPress-Brightcove 連接器：使用連接器'
+parent: WordPress —
 <article class="bcls-article">
-  <h1>刀片印刷機連接器：使用連接器</h1>
+  <h1>WordPress-Brightcove 連接器：使用連接器</h1>
   <summary>本主題介紹了使用 WordPress-Brightcove 連接器來管理和發布在 WordPress 視頻。</summary>
   <section class="bcls-section">
     <h2 id="Introduction">簡介</h2>
@@ -435,14 +12,14 @@ Brightcove
     <h2 id="video_player_publishing">視訊播放器發佈</h2>
     <p>視頻播放器發布允許用戶輕鬆地將他們的 Brightcove 帳戶的視頻插入到他們的 WordPress 網站。</p>
     <p>若要張貼影片，請先瀏覽至新的貼文頁面。在核心功能上，標題下方和編輯器上方有一個「添加媒體」按鈕。有了布萊特灣視頻連接，還有一個「布萊特灣媒體」按鈕。點擊它打開布萊特灣媒體模式。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="添加布萊特灣學習服務-媒體的按鈕" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/brightcove-media.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Button to add Brightcove learning-services-media" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/brightcove-media.png" /></figure>
     <p>從那裡，用戶可以通過點擊它來選擇他們想要使用的圖像。影片的縮圖會出現在側邊，以及選項。如要尋找特定影片，您可以依標題、標籤或說明進行搜尋。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="選取的影像會出現在側面" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/select-videos.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Selected image appears on the side" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/select-videos.png" /></figure>
     <p>然後，使用者可以選擇想要使用的播放器，並自訂選項，例如自動播放、嵌入樣式和調整大小。</p>
     <p>插入視訊有兩個選項。只需點擊「插入到帖子」按鈕將插入視頻到帖子中，但用戶也可以複製簡碼並粘貼到帖子中。如果您使用「插入到帖子」按鈕，短代碼仍然可以在純文本視圖中顯示。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="可將視訊插入貼文的選項、簡碼和按鈕" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/options-shortcode-insert.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Options, Shortcode, and button to insert video into a post" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/options-shortcode-insert.png" /></figure>
     <p>該視頻將出現在新的帖子頁面上，但要查看它將是什麼樣子發布，請檢查帖子預覽。它可能是非常不同的。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="並排比較編輯窗口中的圖像和發布的視頻。" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/preview-vs-post.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="side by side comparison of the image within the edit window and the video posted." width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/preview-vs-post.png" /></figure>
     <section class="bcls-subsection">
       <h3 id="publishing_playlists">發佈播放清單</h3>
       <p>播放清單的發佈方式與單一影片完全相同。請注意，必須有啟用播放清單的 Brightcove 播放器才能發佈播放清單。</p>
@@ -454,211 +31,56 @@ Brightcove
     <section class="bcls-subsection">
       <h3 id="video_upload">影片上傳</h3>
       <p>若要將影片上傳至布萊特灣，請從 WordPress 的布萊特灣管理頁面按一下「新增」。「</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="[新增] 按鈕。" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/add-new.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="The add new button." src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/add-new.png" /></figure>
       <p>您可以從該處選取檔案或將檔案拖曳至要上傳的頁面。您可以同時選擇多個檔案進行上傳</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="選取或拖放。" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/drop-files.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="Select or drag and drop." width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/drop-files.png" /></figure>
       <p>檔案將出現在頁面上。要添加元數據，點擊文件的名稱，該選項將打開。</p>
-      <figure class="bcls-figure">&lt;img class =“ bcls-image”。=“” alt =“添加元數據。” width =“ 800px” src =“ // learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/upload-with-metadata.png” /&gt;</figure>
+      <figure class="bcls-figure"><img class="bcls-image" .="" alt="Add metadata." width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/upload-with-metadata.png" /></figure>
       <p>當您準備好時，點擊開始上傳。</p>
       <p>按一下「上傳」連結，即可透過媒體模式在新貼文頁面上傳影片的方式相同。</p>
     </section>
     <section class="bcls-subsection">
       <h3 id="failure">失敗</h3>
-      <figure class="bcls-figure"><img class="bcls-image" alt="失敗通知" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/unable-to-upload.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="failure notice" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/unable-to-upload.png" /></figure>
       <p>如果影片上傳失敗，可能是檔案權限有問題。檢查以確保 Web 服務器具有 wp-內容/上傳文件夾的讀/寫權限。影片將在此暫時上傳。</p>
       <p>布萊特灣也不會從防火牆後面攝取。如果這是問題，將會產生新的視訊，但不會轉碼。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="上傳失敗" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/failed-upload.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="failed upload" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/failed-upload.png" /></figure>
       <p>作為解決方案，請轉到您的 Brightcove 帳戶並替換源文件。必須開啟防火牆，才能從 WordPress 擷取視訊。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="取代來源" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/replace-source.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="replace source" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/replace-source.png" /></figure>
       <p>不要忘記取消勾選保留現有縮圖和海報的方塊。否則，它將保持一個灰色框。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="方塊取消勾選，以便產生新的縮圖" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/keep-thumbnails.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="box unchecked so new thumbnails are generated" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/keep-thumbnails.png" /></figure>
       <p>完成上傳後，您的視頻應該可以在 WordPress 中使用。</p>
       <p>有關更多信息，請查看<a href="https://support.brightcove.com/debugging-network-and-api-connection-issues-cms-and-dam-integrations">使用CMS和DAM集成調試網絡和API連接問題</a>。</p>
     </section>
     <section class="bcls-subsection">
       <h3 id="metadata">中繼資料</h3>
       <p>從 WordPress，用戶可以更新視頻的名稱，簡短描述，詳細描述和標籤。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="使用新名稱和資訊編輯畫面" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/edit-screen.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="edit screen with new name and information" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/edit-screen.png" /></figure>
       <p>您也可以上傳新的縮圖、海報和字幕軌，但與上傳影片一樣，防火牆或權限可能會封鎖您。</p>
-      <p>作為<strong>版本1.7.0</strong>，您還可以為視頻選擇一個預定義的Video Cloud文件夾。這個動作將視頻移動到這兩個 WordPress 和視頻雲的文件夾。注意：您必須在視訊雲端中建立資料夾。</p>
+      <p>作為<strong>版本1.7.0</strong>，您還可以為視頻選擇預定義的“視頻雲"文件夾。這個動作將視頻移動到這兩個 WordPress 和視頻雲的文件夾。注意：您必須在視訊雲端中建立資料夾。</p>
       <p>其他中繼資料欄位，包括自訂欄位，必須在布萊特灣工作室中編輯。</p>
     </section>
     <section class="bcls-subsection">
       <h3 id="deletion">刪除</h3>
       <p>使用者可以刪除編輯頁面上的影片。系統會彈出警告以確認。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="刪除影像" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/delete.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="delete image" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/delete.png" /></figure>
     </section>
     <section class="bcls-subsection">
       <h3 id="playlist_management">播放清單管理</h3>
       <p>播放列表不能從 WordPress 創建，但一旦它們存在，它們就可以編輯。您可以在清單中新增或移除視訊，或是向上或向下移動。</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="編輯播放清單畫面" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/playlists.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="edit playlist screen" width="800px" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/playlists.png" /></figure>
     </section>
     <section class="bcls-subsection">
-      <h3 id="players">播放程式</h3>
+      <h3 id="players">玩家</h3>
       <p>玩家也只能在 Brightcove 工作室中建立或編輯，但某些方面（例如大小）可以在發佈時更改特定影片。請注意，播放清單播放器必須已經存在，才能發佈播放清單。</p>
     </section>
   </section>
   <section class="bcls-section">
     <h2 id="in-page-experience">頁面內體驗</h2>
     <p>Brightcove 外掛程式支援頁面內體驗。雖然每個人都可以看到該選項，但該選項必須適用於特定帳戶，否則它將無法正常工作。只有可以訪問頁面體驗的帳戶才能在 WordPress 中使用它。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="選取視訊體驗" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/top-bar.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="select video experience" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/top-bar.png" /></figure>
     <p>有兩種方法可以通過 WordPress 整合頁面內體驗：視頻體驗和播放列表體驗。透過視訊體驗，您首先選擇想要包含的體驗。側邊欄中有一個下拉式清單，其中列出了可用的體驗。</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="選取視訊體驗" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/choose-your-experience.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="select video experience" src="//learning-services-media.brightcove.com/doc-assets/node/18582-wordpress-brightcove-connector-using-the-connector/choose-your-experience.png" /></figure>
     <p>點擊「插入文章」而不選擇任何視頻將插入之前創建的頁面內體驗。或者，您也可以選擇一些影片，然後選取您想要加入的頁面內體驗，將這些影片變成一種體驗。同樣地，透過播放清單體驗，選取播放清單和體驗，然後插入貼文中。播放清單將會轉換為體驗。</p>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">頁面內容</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>布萊特灣支援</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">系統狀態</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">聯絡支援</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">文獻資料</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>訓練</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">線上課程</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">註冊課程</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">布萊特灣大學</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">亮麗</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">聯絡我們</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> 布萊特灣公司版權所有</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>
