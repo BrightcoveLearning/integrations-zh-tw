@@ -1,0 +1,1241 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW"> 
+    <head>
+        <title>使用適用於 Shopify 的 Brightcove 視頻連接器</title>
+        
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex,nofollow"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="本主題提供有關使用適用於 Shopify 的 Brightcove 視頻連接器的說明。">
+        
+        <!-- Google Font -->
+        <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+        <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+        
+        <!-- FontAwesome JS-->
+        <script src="https://kit.fontawesome.com/d67c74a882.js" crossorigin="anonymous"></script>  
+        
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.css">
+
+        <!-- Theme CSS -->  
+        <link id="theme-style" rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/css/theme.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/prism.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/custom-css/styles.css">
+
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+        <script translate="no">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XBJC11HF8Z');
+        </script>
+        <script src="/assets/s-site-assets-scripts/sixth-sense.js"></script>
+        <script src="/assets/s-site-assets-scripts/sajari-head.js"></script>
+        <script src="/assets/s-site-assets-scripts/feather.min.js"></script>
+
+    </head> 
+
+    <body class="docs-page">
+
+
+<header class="header fixed-top">
+  <div class="branding docs-branding">
+    <div class="container-fluid position-relative py-2">
+      <div class="docs-logo-wrapper">
+        <button id="docs-sidebar-toggler" class="docs-sidebar-toggler"
+          type="button">
+          <span></span> <span></span> <span></span>
+        </button>
+        <div class="site-logo"><a class="navbar-brand" href="https://support.brightcove.com/" style="margin-left: 15px;"> <img class="logo-icon me-2" src="/assets/s-site-assets-template-stylesheets/images/bc_logo_black_1@1x.png" alt="商標" style="margin-bottom: 9px;"/>
+            <!-- <span class="logo-text">BRIGHTCOVE</span> -->
+          </a></div>
+      </div><!--//docs-logo-wrapper-->
+
+      <div class="docs-top-utilities d-flex justify-content-end
+        align-items-center">
+        
+        <!-- Search bar -->
+        <div id="nav-search-box" class="top-search-box d-none d-lg-flex" style="margin-right: 10px ;"></div>
+
+<select id="site_select" class="form-select select-focus" style="width:
+          20%; margin-right: 10px;" translate="no">
+          <option value="">Other Brightcove Docs</option>
+          
+          
+          <option value="https://support.brightcove.com" translate="no">Documentation Home</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD --</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+          
+          
+          
+          <option value="https://mstudio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Marketing Studio</option>
+          
+          
+          
+          <option value="https://player.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
+          
+          
+          
+          <option value="https://apis.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
+          
+          
+          
+          <option value="https://sdks.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
+          
+          
+          
+          <option value="https://integrations.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
+          
+          
+          
+          <option value="https://general.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO ESSENTIALS --</option>
+          
+          
+          
+          <option value="https://audience-insights.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Audience Insights</option>
+          
+          
+          
+          <option value="https://beacon-help.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Studio</option>
+          
+          
+          
+          <option value="https://beacon.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Classic</option>
+          
+          
+          
+          <option value="https://corptv.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;CorpTV</option>
+          
+          
+          
+          <option value="https://live.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+          
+          
+          
+          <option value="https://zencoder.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD ADD-ONS --</option>
+          
+          
+          
+          <option value="https://gallery.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com/social/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+          
+          
+          
+          <option value="https://interactivity.support.brightcove.com/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Interactivity</option>
+          
+          
+          
+          <option value="https://ssai.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+          
+          
+          
+          <option value="https://campaign.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
+          
+          
+        </select>
+
+        <select id="language_select" class="form-select select-focus" style="width: 10%;"
+          onchange="doGTranslate(this);" translate="no">
+          <!-- <option value="">Select Language</option> -->
+          <option value="en|en" translate="No">English</option>
+          <option value="en|zh-TW" translate="No">繁體中文</option>
+          <option value="en|fr" translate="No">Français</option>
+          <option value="en|de" translate="No">Deutsche</option>
+          <option value="en|ja" translate="No">日本語</option>
+          <option value="en|ko" translate="No">한국어</option>
+          <option value="en|es" translate="No">Español</option>
+        </select>
+
+        <script translate="no">
+          /* <![CDATA[ */
+          function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+          /* ]]> */
+        </script>
+      </div>
+    </div>
+  </div>
+</header><!--//header-->
+
+<div class="docs-wrapper">
+  <div id="docs-sidebar" class="docs-sidebar" style="padding-right: 15px;">
+    <div id="nav-search-box" class="top-search-box d-lg-none p-3"></div>
+    <div class="row">
+      
+        <div id="side_nav" style="margin-left: 1em; display: inline-block; border-right: 1px solid #e5e5e6; padding-right: 1em;">
+          
+          <nav class="docs-nav sidenav" aria-label="Main">
+            <ul class="site-nav" style="list-style-type: none;">
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/index.html">首頁</a></li>
+            
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;一般資訊</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/general/cms-integration-training-videos.html">CMS 整合訓練影片</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/general/integrating-your-cms-video-cloud.html">將CMS與Video Cloud集成</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/general/embedding-brightcove-players-cms.html">在 CMS 中嵌入布萊特灣玩家</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/general/embedding-brightcove-page-experiences-cms.html">在 CMS 中嵌入頁面內體驗</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/general/debugging-network-and-api-connection-issues-cms-and-dam-integrations.html">偵錯網路和 API 連線問題</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/wordpress/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp; WordPress</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/wordpress/getting-started-brightcove-video-connect-wordpress-cms.html">開始使用布萊特灣視頻連接</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/drupal/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp; Drupal</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/drupal/getting-started-brightcove-video-connect-drupal-cms.html">開始使用 Drupal 的連接器</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/drupal/drupal-9-brightcove-connector-overview.html">Drupal 9 - Brightcove 連接器：概述</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/drupal/drupal-8-brightcove-connector-configuration.html">德魯帕爾 8-配置</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/drupal/drupal-8-brightcove-connector-content-management.html">德魯帕爾 8-內容管理</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/drupal/drupal-8-brightcove-connector-embedding-content.html">德魯帕爾 8-嵌入內容</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/drupal/drupal-8-brightcove-connector-installation.html">Drupal 8-連接器安裝</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/drupal/drupal-7-brightcove-connector-configuration-and-usage.html">Drupal 7-配置和使用</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/drupal/drupal-7-brightcove-connector-installation.html">德魯帕爾 7-安裝</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/adobe/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp; Adobe</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html">開始使用 AEM 的連接器</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/adobe/adobe-aem-brightcove-connector-configuration.html">組態</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/adobe/adobe-aem-brightcove-connector-installation.html">本地 AEM 的安裝</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/adobe/adobe-aem-brightcove-connection-installation-cloud.html">Cloud AEM 安裝</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/adobe/adobe-aem-brightcove-connector-overview.html">概述</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/adobe/adobe-aem-brightcove-connector-using-connector.html">使用連接器</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/sitecore/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;網站核心</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/sitecore/getting-started-brightcove-video-connect-sitecore-experience-platform.html">開始使用 Sitecore 的連接器</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/sitecore/installation-guide.html">安裝指南：適用於站台的布萊特灣視頻連接</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/sitecore/configuration.html">配置指南：適用於站台的布萊特灣視頻連接</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/sitecore/user-guide.html">用戶指南：適用於站台的布萊特灣視頻連接</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/sharepoint/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp; SharePoint</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/sharepoint/getting-started-brightcove-video-connect-sharepoint.html">開始使用 SharePoint 的連接器</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/hootsuite/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;霍特套房</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/hootsuite/publishing-brightcove-video-hootsuite.html">從 Hootsuite 發布 Brightcove 視頻</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/ecommerce/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;电子商</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ecommerce/salesforce/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;業務部商務雲</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html">銷售團隊商務雲端：安裝</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html">銷售團隊商務雲端：使用者指南</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ecommerce/adobe-magento-commerce/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;商務</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecommerce/adobe-magento-commerce/installation-guide.html">安裝指南</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecommerce/adobe-magento-commerce/user-guide.html">使用者指南</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/ecdn/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;電子網路</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ecdn/kollective/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;科勒主義</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecdn/kollective/kollective-deployment-guide.html">多元化的 eCDN 部署指南</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecdn/kollective/add-kollective-player-plugin.html">安裝 Kollective Player 插件</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecdn/kollective/kollective-user-guide.html">多元化的 eDN 使用者指南</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ecdn/peer5/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;第五同行</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecdn/peer5/brightcove-with-peer5-integration.html">具備 Peer5 整合的布萊特灣</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/ecdn/ramp/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;坡道</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecdn/ramp/getting-started-ramp-omnicache-and-video-cloud.html">開始使用斜坡 OmnicCache 和視訊雲端</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/ecdn/ramp/getting-started-ramp-multicast-and-video-cloud.html">開始使用斜坡多重 + 和視訊雲端</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/teams/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;微軟團隊的布萊奇灣視頻連接</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/teams/installation.html">安裝 Teams 連接器</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/teams/using.html">使用適用於 Microsoft Teams 的連接器</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/web-conferencing/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;網絡會議</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/web-conferencing/host-zoom-conference-brightcove-live.html">布萊特灣現場變焦會議</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/web-conferencing/host-cisco-webex-conference-brightcove-live.html">思科 Webex 會議-布萊特灣直播</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/web-conferencing/host-avaya-conference-brightcove-live.html">阿瓦雅會議在布萊特灣直播</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/web-conferencing/host-inxpo-live.html">在布萊特灣直播的 INXPO 活動</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/non-brightcove-players/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;非布萊奇灣球員</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/non-brightcove-players/inplayer.html">使用 InPlayer 交付 Brightcove 內容</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/support/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;支持</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/viewing-brightcove-system-status-page.html">檢視布萊特灣系統狀態頁面</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/contact-sales.html">聯絡銷售人員</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/opening-case-with-brightcove-support.html">開啟支援案例</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/reset-support-portal-password.html">重置您的支持門戶密碼</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+          </ul>
+          </nav>
+        </div>
+      </div>
+    </div><!--//docs-sidebar-->
+  </div>
+</div>
+
+<div style="margin-top: 20px;">
+  <div class="docs-content" style="padding-bottom: 0px;">
+    <div class="container">
+      <div class="docs-overview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/">首頁</a></li>
+            
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/ecommerce/">電子商務</a></li>
+            
+            
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/ecommerce/shopify/">購物</a></li>
+            
+            
+            
+            <li class="breadcrumb-item active" aria-current="page">使用適用於 Shopify 的 Brightcove 視頻連接器</li>
+            
+            
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="docs-content">
+  <div class="container">
+    <div class="docs-overview py-5">
+      
+      <div class="centered-inpage-nav" id="centered_inpage_nav">
+        <nav id="centered_toc">
+          <select id="centered_in_page_toc" class="form-select select-focus"></select>
+        </nav>
+      </div>
+      <br/>
+      
+      
+<h1>使用適用於 Shopify 的 Brightcove 視頻連接器</h1>
+<article class="bcls-article">
+  <summary>本主題提供有關使用適用於 Shopify 的 Brightcove 視頻連接器的說明。</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">簡介</h2>
+    <p>適用於 Shopify 的 Brightcove Video Connector 允許您在產品頁面中使用來自視頻雲的視頻，還可以將視頻直播到您的商店，並在 Shopify 應用程序中檢查收視率、績效和參與度分析。它還允許您從應用程序將視頻上傳到視頻雲。這些操作在以下各節中詳細介紹。</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">有關安裝 Brightcove 視頻連接器的說明，請參閱 <a href="/ecommerce/shopify/brightcove-shopify-commerce-platform-overview.html">概述</a>。</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="guidelines">準則選項卡</h2>
+    <p>在 <strong>指南選項</strong> 卡中，您將找到配置應用程序的說明。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewing_videos">觀看影片</h2>
+    <p>要查看您的視頻雲帳戶中的現有視頻，請單擊 <strong>視頻</strong>：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/video-tab.webp" alt="視頻選項卡"/>
+      <figcaption class="bcls-caption--image">視頻選項卡</figcaption>
+    </figure>
+    <p>一次顯示 12 個視頻，您可以使用上圖中突出顯示的向前和向後箭頭瀏覽集合。</p>
+    <h3>過濾視頻列表</h3>
+    <p>要按標題中出現的字詞過濾視頻列表，請在 <strong>過濾器</strong> 框中輸入這些字詞：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/filter-by-title.webp" alt="按標題過濾"/>
+      <figcaption class="bcls-caption--image">按標題過濾</figcaption>
+    </figure>
+    <p>您還可以通過單擊 <span class="button-gray-border">更多過濾器</span>按標籤和/或描述進行過濾：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/filter-tag-description.webp" alt="按標籤/描述過濾"/>
+      <figcaption class="bcls-caption--image">按標籤/描述過濾</figcaption>
+    </figure>
+    <aside class="bcls-aside bcls-aside--tip language-editable">請注意，當您使用多個篩選器時，它們會與<code translate="No">AND</code>邏輯一起套用。例如，如果您在標題、標籤和描述框中輸入“box”，則只會顯示標題和描述中均包含“box”且標籤為“box”的視頻。</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="uploading_videos">上傳視訊</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>要上傳新視頻，請點擊 <span class="button-gray-border">上傳視頻</span>。</li>
+      <li>在“上傳視頻”對話框中，輸入視頻的 <strong>名稱</strong> （必填）、 <strong>說明</strong> （可選）和 <strong>標籤</strong> （可選）。</li>
+      <li>按一下「<span class="button-green">儲存</span>」。</li>
+    </ol>
+    <p>該視頻現在可在 Shopify 和 Video Cloud Studio 中使用。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="video_options">視頻選項</h2>
+    <p>要訪問任何視頻的選項，請單擊視頻下方的 3 個點以顯示選項菜單：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/video-options-menu.webp" alt="視頻選項菜單"/>
+      <figcaption class="bcls-caption--image">視頻選項菜單</figcaption>
+    </figure>
+    <p>我們將在下面的部分中查看這些選項。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit_video">編輯視頻</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊視頻下方的 3 個點，然後在菜單中選擇 <strong>“編輯視頻”</strong> 選項。</li>
+      <li>
+        在“視頻詳細信息”對話框中，對名稱、描述和標籤進行任何更改：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/video-details.webp" alt="視訊詳細資料"/>
+          <figcaption class="bcls-caption--image">視訊詳細資料</figcaption>
+        </figure>
+      </li>
+      <li>按一下 [ <span class="button-green">儲</span>存] 儲存變更。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Delete video">刪除視頻</h2>
+    <aside class="bcls-aside bcls-aside--warning language-editable">請注意，刪除視頻是不可逆的，並且如果該視頻與任何活動相關聯，則該視頻將從該活動中消失 - 請確保這是您要執行的操作，然後再繼續。</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊視頻下方的 3 個點，然後在菜單中選擇 <strong>刪除視頻</strong> 選項。</li>
+      <li>
+        在視頻刪除對話框中，點擊 <span class="button-green">確認</span> 完成視頻的刪除：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/delete-video.webp" alt="刪除視頻"/>
+          <figcaption class="bcls-caption--image">刪除視頻</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Create_campaign_for_video">為視頻製作廣告系列</h2>
+    <p>活動用於將您的視頻添加到 Shopify 中的特定產品頁面。</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">請注意，您還可以在 <a href="#viewing_campaigns">“廣告系列”選項卡</a>下創建廣告系列並將視頻與其相關聯。</aside>
+    <ol class="bcls-tasklist-restart">
+      <li>點擊視頻下方的 3 個點，然後在菜單中選擇 <strong>為此視頻創建活動</strong> 選項。</li>
+      <li>
+        在 New Campaign 對話框中，添加名稱（必需）、描述（可選）和標籤（可選）。同時選擇或更改視頻：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/delete-video.webp" alt="創建活動"/>
+          <figcaption class="bcls-caption--image">創建活動</figcaption>
+        </figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">根據您是從 <strong>“廣告系列</strong> ”還是 <strong>“視頻”</strong> 選項卡創建廣告系列，可能會或可能不會預填充視頻。您可以根據需要添加或更改視頻。</aside>
+      </li>
+      <li>按一下 [ <span class="button-green">儲</span>存] 儲存變更。</li>
+      <li>無論您從何處創建活動， <strong>“活動”選項</strong> 卡現在都會打開並在列表頂部顯示您的活動。</li>
+      <li>
+        要將活動/視頻添加到產品頁面，請單擊 <strong>編輯以編輯活動</strong>：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/edit-campaign.webp" alt="編輯活動鏈接"/>
+          <figcaption class="bcls-caption--image">編輯活動鏈接</figcaption>
+        </figure>
+      </li>
+      <li>
+        <strong>產品</strong> 部分將出現在活動編輯對話框的底部 - 單擊 <strong>添加</strong> 鏈接以添加產品：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/add-link-for-product-campaign.webp" alt="添加鏈接以添加產品"/>
+          <figcaption class="bcls-caption--image">添加鏈接以添加產品</figcaption>
+        </figure>
+      </li>
+      <li>
+        在產品選擇器中，您可以搜索並添加一個或多個產品以將營銷活動關聯到：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/campaign-product-selector.webp" alt="活動的產品選擇器"/>
+          <figcaption class="bcls-caption--image">活動的產品選擇器</figcaption>
+        </figure>
+      </li>
+      <li>
+        對於您選擇的每個產品，您現在可以設置視頻在產品頁面中的位置：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/set-position-of-video.webp" alt="設置視頻位置"/>
+          <figcaption class="bcls-caption--image">設置視頻位置</figcaption>
+        </figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">請注意，如果您改變主意，也可以 <strong>刪除</strong> 產品。</aside>
+      </li>
+      <li>
+        “設置位置”對話框讓您可以選擇鍵入 (CSS) 選擇器或從產品頁面中選擇一個：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/set-position-dialog.webp" alt="設置位置對話框"/>
+          <figcaption class="bcls-caption--image">設置位置對話框</figcaption>
+        </figure>
+      </li>
+      <li>
+        如果您選擇從產品頁面獲取選擇器，您將看到產品頁面，首先您必須選擇您的視頻是放置在您選擇的元素之前還是之後：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/choose-before-after.webp" alt="選擇之前或之後"/>
+          <figcaption class="bcls-caption--image">選擇之前或之後</figcaption>
+        </figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">選擇後，單擊 <strong>Got it</strong> 關閉對話框。</aside>
+      </li>
+      <li>
+        將鼠標懸停在產品頁面中的項目上，然後單擊您想要放置視頻之前（或之後）的項目：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/get-selector.webp" alt="查找選擇器"/>
+          <figcaption class="bcls-caption--image">查找選擇器</figcaption>
+        </figure>
+        <aside class="bcls-aside bcls-aside--tip language-editable">為獲得最佳效果，請選擇頁面右側的元素。</aside>
+      </li>
+      <li>
+        當您單擊一個元素將其選中時，您將看到視頻位置的預覽 - 並且還會注意到頁面底部的註釋：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/preview-video-position.webp" alt="預覽視頻位置"/>
+          <figcaption class="bcls-caption--image">預覽視頻位置</figcaption>
+        </figure>
+      </li>
+      <li>
+        當您關閉產品頁面時，您會看到對話框中的 Selector 字段已填充，您必須點擊 <span class="button-green">Set Position</span> 才能完成將視頻添加到頁面：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/selector-field-filled.webp" alt="選擇器字段已填充"/>
+          <figcaption class="bcls-caption--image">選擇器字段已填充</figcaption>
+        </figure>
+      </li>
+      <li>
+        您還可以單擊預覽在產品頁面中查看和播放視頻（您可以單擊產品旁邊的設置位置以重新打開該對話框以隨時查看預覽，或者直接去您的在線商店中查看）：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/" alt="產品頁面中的視頻預覽"/>
+          <figcaption class="bcls-caption--image">產品頁面中的視頻預覽</figcaption>
+        </figure>
+      </li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information language-editable">
+      請注意，您只能將一個視頻添加到一個營銷活動中，但您可以將多個營銷活動與一個產品相關聯以添加多個視頻：
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/shopify/multiple-campaigns.webp" alt="多個活動"/>
+        <figcaption class="bcls-caption--image">多個活動</figcaption>
+      </figure>
+    </aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewing_campaigns">查看活動</h2>
+    <p>要查看現有的活動，請單擊 <strong>活動</strong>：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/campaigns-tab.png" alt="活動標籤"/>
+      <figcaption class="bcls-caption--image">活動標籤</figcaption>
+    </figure>
+    <p>顯示您的所有廣告系列。</p>
+    <h3>篩選活動列表</h3>
+    <p>要按標題中出現的詞過濾活動列表，請在 <strong>過濾</strong> 框中輸入這些詞：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/filter-campaigns-by-title.png" alt="按標題過濾活動"/>
+      <figcaption class="bcls-caption--image">按標題過濾活動</figcaption>
+    </figure>
+    <p>您還可以通過單擊 <span class="button-gray-border">更多過濾器</span>按標籤和/或描述進行過濾：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/filter-tag-description.webp" alt="按標籤/描述過濾"/>
+      <figcaption class="bcls-caption--image">按標籤/描述過濾</figcaption>
+    </figure>
+    <aside class="bcls-aside bcls-aside--tip language-editable">請注意，當您使用多個篩選器時，它們會與<code translate="No">AND</code>邏輯一起套用。例如，如果您在標題、標籤和描述框中輸入“box”，則只會顯示標題和描述中均包含“box”且標籤為“box”的視頻。</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create_new_campaign">製作新廣告系列</h2>
+    <p>要創建新的活動，請點擊 <span class="button-gray-border">New Campaign</span> 。</p>
+    <p>其餘過程與您在“視頻”選項卡中 <a href="#Create_campaign_for_video">為視頻創建廣告系列</a> 時的過程相同。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete_campaigns">刪除活動</h2>
+    <p>您可以通過在列表中選擇一個或多個來刪除不再需要的營銷活動：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/select-campaigns-to-delete.webp" alt="選擇要刪除的廣告系列"/>
+      <figcaption class="bcls-caption--image">選擇要刪除的廣告系列</figcaption>
+    </figure>
+    <p>選擇要刪除的營銷活動後，點擊 <span class="button-gray-border">刪除營銷活動</span>。</p>
+    <p>要完成刪除，請在確認對話框中單擊 <span class="button-green">“確認”</span> ：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/delete-campaigns-confirm.webp" alt="確認刪除活動"/>
+      <figcaption class="bcls-caption--image">確認刪除活動</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view_live_events">查看現場活動</h2>
+    <p>要查看您帳戶的現場活動列表，請轉到 <strong>“現場活動”</strong> 選項卡：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/live-events-tab.webp" alt="現場活動列表"/>
+      <figcaption class="bcls-caption--image">現場活動列表</figcaption>
+    </figure>
+    <p>要查看正在進行的實時事件（或已完成事件的錄製，如果已完成）單擊 <strong>查看</strong>：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/view-live-event.webp" alt="查看現場活動"/>
+      <figcaption class="bcls-caption--image">查看現場活動</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="add_new_live_event">添加新的實時事件</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>要添加新的實時事件，請單擊 <span class="button-green">“新建實時事件”</span> 以打開如下所示的對話框。</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/live-event-new-dialog.webp" alt="新現場活動"/>
+          <figcaption class="bcls-caption--image">新現場活動</figcaption>
+        </figure>
+      </li>
+      <li>
+        <p>填寫字段：</p>
+        <ul>
+          <li><strong>姓名</strong> （必填）</li>
+          <li><strong>說明</strong> （可選）</li>
+          <li><strong>標籤</strong> （可選）</li>
+          <li><strong>參考 ID</strong> （可選）通常用於匹配另一個系統中的 ID。</li>
+          <li><strong>產品</strong> （可選）在現場活動中突出顯示您的產品，這還允許您將它們固定到聊天頂部顯示在現場活動伴隨的聊天頂部，觀眾可以點擊它們來訪問可以購買的產品頁面。</li>
+          <li>
+            <strong>地區</strong> （必填）選擇您認為最接近目標受眾的地區。
+          </li>
+          <li>
+            <strong>Live Ingest 配置文件</strong> （可選）如果您希望使用與默認配置文件不同的配置文件，您可以通過選擇查看為每個配置文件創建的再現。配置文件確定實際傳送給觀眾的視頻再現（請注意，觀眾看到的實際再現取決於觀眾連接上可用的帶寬）。
+          </li>
+          <li><strong>完成後將事件轉換為視頻資產</strong> 選中該框以保存它的 VOD 記錄。請注意，如果稍後您嘗試查看未保存錄製的已完成現場活動，您將看到播放器中顯示錯誤。</li>
+          <li><strong>產品</strong> 單擊 <span class="button-green">添加產品</span> 以打開產品選擇器，您可以在其中篩选和選擇要添加到實時事件的產品。做出選擇後單擊 <span class="button-green">保存</span> 。</li>
+        </ul>
+      </li>
+      <li>
+        單擊 <span class="button-green">保存</span> 以創建實時事件。
+        <aside class="bcls-aside bcls-aside--tip language-editable">注意：如果您看到一條錯誤消息，表明您已為所選區域創建了最大數量的事件，請選擇其他區域並再次單擊 <span class="button-green">“保存”</span> 。</aside>
+      </li>
+    </ol>
+    <h3>設置和運行現場活動</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        直播活動需要幾分鐘時間才能初始化。在等待期間，您可以通過將直播端點（RTMP 地址）和流名稱從直播活動控制室複製到您的編碼器設置中來準備好您的直播編碼器：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/live-rtmp-stream-name.webp" alt="實時端點和流名稱"/>
+          <figcaption class="bcls-caption--image">實時端點和流名稱</figcaption>
+        </figure>
+        <aside class="bcls-aside bcls-aside--information language-editable">
+          <p>將端點和流名稱輸入編碼器的方式因您使用的編碼器而異。例如，在OBS軟件編碼器中，進入設置：</p>
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/shopify/obs-setup-settings.webp" alt="OBS設置"/>
+            <figcaption class="bcls-caption--image">OBS設置</figcaption>
+          </figure>
+          <p>然後轉到 <strong>Stream</strong> 設置，將 <strong>Service</strong> 設置為 <strong>Custom</strong> ，並在 <strong>Server</strong> 字段中輸入 RTMP 端點，並在 <strong>Steam Key</strong> 字段中輸入流名稱：</p>
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/shopify/obs-setup-rtmp-stream-name.webp" alt="OBS 碼流設置"/>
+            <figcaption class="bcls-caption--image">OBS 碼流設置</figcaption>
+          </figure>
+        </aside>
+      </li>
+      <li>
+        啟動編碼器並準備好直播活動後，單擊直播活動控制室播放器上的播放按鈕，以便您可以看到廣播並使用自動包含的 <strong>聊天</strong> ：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/live-playbutton.webp" alt="開始直播事件回放"/>
+          <figcaption class="bcls-caption--image">開始直播事件回放</figcaption>
+        </figure>
+      </li>
+      <li>
+        在播放活動時，您可以輸入自己的聊天消息或回復觀眾的消息：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/live-enter-chat-message.webp" alt="發送聊天消息"/>
+          <figcaption class="bcls-caption--image">發送聊天消息</figcaption>
+        </figure>
+      </li>
+      <li>
+        您還可以將添加到聊天頂部的產品置頂——查看者可以點擊它們進入產品頁面：
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/shopify/live-pin-product-to-chat.webp" alt="將產品固定到聊天"/>
+          <figcaption class="bcls-caption--image">將產品固定到聊天</figcaption>
+        </figure>
+        <p>您也可以隨時從聊天中取消固定產品。</p>
+      </li>
+      <li>當您想結束活動時，請點擊 <span class="button-gray-border">結束活動</span>。</li>
+    </ol>
+    <p>現場活動結束後，活動的分析將顯示在控制室中：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/live-event-analytics.webp" alt="現場活動分析"/>
+      <figcaption class="bcls-caption--image">現場活動分析</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewing_analytics">檢視分析</h2>
+    <p>轉到“分析”選項卡以查看您視頻的分析：</p>
+    <aside class="bcls-aside bcls-aside--information language-editable">請注意，這些分析與您在 Video Cloud Studio 中看到的分析相同 - 它們包含在此處是為了您在 Shopify 中工作時的方便。</aside>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/analytics-tab.webp" alt="分析標籤"/>
+      <figcaption class="bcls-caption--image">分析標籤</figcaption>
+    </figure>
+    <aside class="bcls-aside bcls-aside--information language-editable">有關各種分析指標含義的更多詳細信息，請參閱 <a href="https://studio.support.brightcove.com/analytics/reports/analytics-report-reference.html">分析報告參考</a>。</aside>
+    <p>這裡有許多選項允許您以不同的方式過濾數據。</p>
+    <h3>日期範圍選擇器</h3>
+    <p>日期範圍選擇器為您提供了多種標準日期範圍來查看分析，還可以選擇您自己的日期或日期範圍：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/analytics-date-range-selector.webp" alt="日期範圍選擇器"/>
+      <figcaption class="bcls-caption--image">日期範圍選擇器</figcaption>
+    </figure>
+    <p>您還可以通過單擊日期範圍選擇器下方的 <strong>GMT</strong> 鏈接來更改報告的時區。該鏈接會將您帶到 Video Cloud Studio，如果您是該帳戶的管理員，您可以 <a href="https://studio.support.brightcove.com/admin/general/managing-account-settings.html#account_settings">按照這些說明</a>更改時區。</p>
+    <h3>報告類型</h3>
+    <p>您可以查看兩種基本類型的報告：</p>
+    <dl>
+      <dt>績效報告</dt>
+      <dd>性能報告提供有關視頻內容性能的一般信息，例如視頻被觀看了多少次、觀看它們的設備、觀看了多少秒的視頻等等。</dd>
+      <dt>參與度報告</dt>
+      <dd>參與度報告顯示視頻中不同時間點的觀看次數 - 請記住，這些是觀看次數，而不是觀看者，例如，如果有人不斷向後移動播放頭並重新觀看視頻的最後幾秒 10 次，那麼算作 10 次觀看。然而，趨勢仍然可以揭示。例如，視頻開頭的觀看次數急劇下降表明它通常沒有吸引力，而視頻後期的觀看次數急劇下降可能表明某個部分很無聊，或者向觀看者暗示視頻基本上已經結束。</dd>
+    </dl>
+    <p>您可以使用報告類型選擇器在績效報告和參與度報告之間來回切換：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/analytics-performance-engagement-selector.webp" alt="報告類型選擇器"/>
+      <figcaption class="bcls-caption--image">報告類型選擇器</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="performance_report_subtypes">績效報告類型</h2>
+    <p>查看性能報告時，您可以使用報告類型選擇器右側的子類型選擇器選擇多種類型：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/performance-report-filter-selector.webp" alt="績效報告類型"/>
+      <figcaption class="bcls-caption--image">績效報告類型</figcaption>
+    </figure>
+    <p>不同的報告有多種用途。例如，對於您的業務模型，了解觀看者主要使用台式計算機還是移動設備，或者觀看次數最多的國家/地區可能特別有用。同樣，您可能希望按天查看數據，因為了解觀眾是在工作日還是周末更多地查看您的廣告系列對您來說很重要。</p>
+    <p>選擇器下方的性能報告表顯示了單個項目的分析數據。它一次最多顯示 10 個項目，如果超過 10 個項目，您將在底部看到用於瀏覽它們的按鈕：</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="performance_report_chart">績效報告</h2>
+    <p>效果報告表格上方的圖表顯示了所選日期範圍內不同指標的帳戶總值。圖表上方的選擇器允許您選擇不同的指標來查看：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/analytics-report-selectors.webp" alt="指標選擇器"/>
+      <figcaption class="bcls-caption--image">指標選擇器</figcaption>
+    </figure>
+    <p></p>另請注意，當您將鼠標懸停在圖表上的一個條形圖上時，會顯示它代表的實際數據編號：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/performance-report-mouseover-date.webp" alt="鼠標懸停性能圖表"/>
+      <figcaption class="bcls-caption--image">鼠標懸停性能圖表</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="engagement_reports">參與度報告</h2>
+    <p>參與報告類型也有子類型，但僅限於視頻、播放器和日期：</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/shopify/engagement-report-filter-selector.webp" alt="參與報告類型"/>
+      <figcaption class="bcls-caption--image">參與報告類型</figcaption>
+    </figure>
+    <p>參與度報告表格上方的圖表顯示了整個帳戶中視頻的平均參與度。您可以在圖表中進行的唯一更改是調整日期範圍。</p>
+  </section>
+</article>
+<!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
+  
+  <nav class="right-side-nav" id="right_side_nav">
+    <h6 class="toc">頁面內容</h6>
+    <ul id="in_page_nav" class="list-none"></ul>
+  </nav>
+  
+<!-- </div> -->
+</div>
+</div>
+</div>
+<div class="page-content" style="background-color: rgb(1, 5, 14);">
+  <div class="container" style="width: 50%;">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md">
+          <h5 class="h5-text">布萊特灣支援</h5>
+          <ul class="list-unstyled text-small" style="color: white ;">
+            <li><a class="a-text" href="https://status.brightcove.com">系統狀態</a></li>
+            <li><a class="a-text" href="https://supportportal.brightcove.com">聯絡支援</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/search.html">搜索所有文檔</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">訓練</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">在線課程</a></li>
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/register-training.html">註冊課程</a></li>
+            <li><a class="a-text" href="https://academy.brightcove.com/">光明灣學院</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Brightcove</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://www.brightcove.com">亮麗</a></li>
+            <li><a class="a-text" href="https://community.brightcove.com/s/">亮點社區論壇</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/product-updates.html">產品發布說明</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/doc-updates.html">文檔更新</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© Brightcove Inc. 保留所有權利。</p>
+      <a class="a-text" href="https://www.brightcove.com/en/legal/privacy">隱私</a> <a class="a-text" href="https://www.brightcove.com/en/terms-and-conditions">條款 &amp; 狀況</a>
+
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" target="_blank" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a href="https://twitter.com/brightcove" title="Twitter" target="_blank" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a href="https://www.facebook.com/Brightcove" title="Facebook" target="_blank" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+      </ul>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<script translate="no">
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documentation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder,
+    styling: {
+      components: {
+        
+        input: {
+          container: {
+          backgroundColor: 'white',
+          }
+        
+        }
+      }
+    },
+    maxSuggestions: 5, // Maximum number of suggestions to show
+      attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+
+  
+
+
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+    window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+  </script>
+  
+  <!-- Javascript -->          
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/popper.min.js"></script>
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+  <!-- Page Specific JS -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/smoothscroll.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script> -->
+  <!-- <script src="/assets/s-site-assets-template-stylesheets/js/highlight-custom.js"></script>  -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+  <script src="/assets/s-site-assets-template-stylesheets/js/docs.js"></script> 
+
+  <!-- original footer components -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <script src="/assets/s-site-assets-scripts/https-fix.js"></script>
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  <script src="/assets/s-site-assets-scripts/selector.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  <script src="/assets/s-site-assets-scripts/prism-normalize.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
+  <!-- <script src="/assets/s-site-assets-scripts/site.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/tabs.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/toc-new-template.js"></script>
+  
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <script src="/assets/s-site-assets-scripts/local-link-fix.js"></script>
+  <script src="/assets/s-site-assets-scripts/sajari-reindex.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/sajari-search-foot.js"></script>
+  
+  <script translate="no">
+    feather.replace()
+  </script>
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/in-app.js"></script>
+  <style translate="no">
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+  </body>
+</html> 
